@@ -8,7 +8,7 @@ _Due: Session 5 — 05 May_
 
 > **For** [Society]  
 > **Who** [have this problem / need]  
-> **Our product** [product name]  
+> **Our product** [EcoConnect]  
 > **Is a** [category]  
 > **That** [key benefit / reason to use it]  
 > **Unlike** [current alternative]  
