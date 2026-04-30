@@ -18,7 +18,7 @@ _Due: Session 5 — 05 May_
 
 ## Target Users
 
-_Who will use this product? Be specific — not "everyone", but a defined group._
+Local environmental activists, "Friends of the Park" group leaders, or residents of canal-side communities.
 
 ---
 
