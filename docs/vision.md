@@ -10,7 +10,7 @@ _Due: Session 5 — 05 May_
 > **Who** [have this problem / need]  
 > **Our product** [EcoConnect]  
 > **Is a** [category]  
-> **That** [key benefit / reason to use it]  
+> **That** [Environmental Impact / community Building]  
 > **Unlike** [current alternative]  
 > **Our product** [Sustainability, mental welness, Hyper-local event discovery]
 
