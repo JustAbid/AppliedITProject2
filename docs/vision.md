@@ -62,8 +62,8 @@ Format: _As a [persona], I want [goal], so that [benefit]._
 
 | # | Persona | User Story | Priority |
 |---|---|---|---|
-| US-01 | | | Must-have |
-| US-02 | | | Must-have |
+| US-01 | Student |As a student, I want to filter volunteering events by date and time, so that I can find eco-activities that fit around my lecture schedule. | Must-have |
+| US-02 |Community Leader |As a "Friends of the Park" leader, I want to create and manage an event listing, so that I can track how many volunteers are coming and prepare enough equipment. | Must-have |
 | US-03 | | | Must-have |
 | US-04 | | | Should-have |
 | US-05 | | | Could-have |
