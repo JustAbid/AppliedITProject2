@@ -12,7 +12,10 @@ Yogesh Chelluboina
 
 We learned about Agile Software Engineering, its practices & Development activities, Key roles in scrum
 
+28/04/2026
 
+Mohammed Abid Ali Sameer
+Used git and github to understand workflow, worked on project vision.
 
 
 

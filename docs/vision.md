@@ -72,11 +72,12 @@ Format: _As a [persona], I want [goal], so that [benefit]._
 
 ## Feature List
 
-_List the core features your product must have for a working MVP._
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
+- Browse local environmental events
+- Create and manage volunteering events
+- RSVP / Join events
+- Event details page with date, location, and description
+- User dashboard/profile
+- Basic search and filtering for events
 
 ---
 
@@ -88,7 +89,10 @@ _Insert photos of your whiteboard sketches, hand-drawn wireframes, or Figma link
 
 ## Out of Scope (v1)
 
-_Things you are explicitly NOT building in this course._
-
--
--
+- Real-time chat system
+- AI recommendation engine
+- Payment integration or donations
+- Native iOS/Android applications
+- Advanced analytics dashboard
+- Social media-style posting/feed system
+- Multi-language support
