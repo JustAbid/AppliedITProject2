@@ -66,7 +66,7 @@ Format: _As a [persona], I want [goal], so that [benefit]._
 | US-02 |Community Leader |As a "Friends of the Park" leader, I want to create and manage an event listing, so that I can track how many volunteers are coming and prepare enough equipment. | Must-have |
 | US-03 |Local Resident |As a resident, I want to view an event’s location on a map and see "what to bring" instructions, so that I can arrive at the right place with the correct gear. | Must-have |
 | US-04 |Eco-Activist |As an activist, I want a personal dashboard that shows my past contributions, so that I can track my environmental impact and feel a sense of accomplishment. | Should-have |
-| US-05 | | | Could-have |
+| US-05 |New Volunteer |As a first-time volunteer, I want to see a short bio or "mental well-being" focus for each event, so that I can choose an activity that feels welcoming and low-stress. | Could-have |
 
 ---
 
