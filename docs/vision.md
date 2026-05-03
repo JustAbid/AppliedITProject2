@@ -9,7 +9,7 @@ _Due: Session 5 — 05 May_
 > **For** environmentally conscious students, local residents, and community volunteers  
 > **Who** struggle to discover and participate in nearby environmental volunteering activities  
 > **Our product** EcoConnect  
-> **Is a** [category]  
+> **Is a** Application
 > **That** connects users with local sustainability events, promotes environmental impact, and strengthens community involvement
 > **Unlike** traditional social media platforms or generic event listing websites  
 > **Our product** focuses on hyper-local eco-events, mental well-being through community participation, and easy volunteer engagement
