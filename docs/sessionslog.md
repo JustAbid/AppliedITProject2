@@ -17,5 +17,5 @@ We learned about Agile Software Engineering, its practices & Development activit
 ## Mohammed Abid Ali Sameer
 Used git and github to understand workflow, learned the ropes on branching, merging, PR etc, also worked on project vision and updated my part.
 
-
-
+## Mogili vineeth Reddy 
+Used visual studio code for making changes in the project , learned new keys and shortcuts , hands on merge , pull and push concepts.
