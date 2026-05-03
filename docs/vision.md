@@ -6,13 +6,13 @@ _Due: Session 5 — 05 May_
 
 ## Vision Statement
 
-> **For** [Society]  
-> **Who** [have this problem / need]  
-> **Our product** [EcoConnect]  
+> **For** environmentally conscious students, local residents, and community volunteers  
+> **Who** struggle to discover and participate in nearby environmental volunteering activities  
+> **Our product** EcoConnect  
 > **Is a** [category]  
-> **That** [Environmental Impact / community Building]  
-> **Unlike** [current alternative]  
-> **Our product** [Sustainability, mental welness, Hyper-local event discovery]
+> **That** connects users with local sustainability events, promotes environmental impact, and strengthens community involvement
+> **Unlike** traditional social media platforms or generic event listing websites  
+> **Our product** focuses on hyper-local eco-events, mental well-being through community participation, and easy volunteer engagement
 
 ---
 
