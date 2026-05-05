@@ -40,7 +40,7 @@ Local environmental activists, "Friends of the Park" group leaders, or residents
 |---|---|
 | **Age** | 30|
 | **Role / Occupation** |IT employee in Berlin |
-| **Goals** |WWants flexible volunteering options, Needs clear event duration and commitment level & prefers trusted, well-organised events.|
+| **Goals** |Wants flexible volunteering options, Needs clear event duration and commitment level & prefers trusted, well-organised events.|
 | **Frustrations** |Events don't clearly mention time commitment. Most activities happen during working hours.|
 | **Tech comfort** |Uses digital tools for work (apps, calendars, emails) & prefers fast, efficient, and clear interfaces.|
 
