@@ -34,3 +34,6 @@ Used visual studio , added personas , learned how the project process goes and h
 
 ## Yogesh Chelluboina
 Learned how to create personas and scenarios to better understand the needs of different users.
+
+## Amarendar Reddy
+Learned how to fetch, pull, create branch, commit, and learned about github and visual studio.
