@@ -34,15 +34,15 @@ Local environmental activists, "Friends of the Park" group leaders, or residents
 | **Hard to find nearby environmental events, doesn't get reminders.** | |
 | **Uses smartphones, apps and websites daily. Comfortable with registration, filters and notifs.** | |
 
-### Persona 2 — [Name]
+### Persona 2 — [Preetham]
 
 | | |
 |---|---|
-| **Age** | |
-| **Role / Occupation** | |
-| **Goals** | |
-| **Frustrations** | |
-| **Tech comfort** | |
+| **Age** | 30|
+| **Role / Occupation** |IT employee in Berlin |
+| **Goals** |WWants flexible volunteering options, Needs clear event duration and commitment level & prefers trusted, well-organised events.|
+| **Frustrations** |Events don't clearly mention time commitment. Most activities happen during working hours.|
+| **Tech comfort** |Uses digital tools for work (apps, calendars, emails) & prefers fast, efficient, and clear interfaces.|
 
 ### Persona 3 — [Name]
 
