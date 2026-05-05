@@ -27,7 +27,7 @@ Used visual studio code for making changes in the project , learned new keys and
 
 ## Mohammed Abid Ali Sameer
 
-
+Added personas, imagined scenarios, made kanban style project timeline scheduler/management.
 
 ## Mogili Vineeth Reddy
 Used visual studio , added personas , learned how the project process goes and how to make scenarios.
