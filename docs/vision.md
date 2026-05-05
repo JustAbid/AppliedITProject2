@@ -24,15 +24,15 @@ Local environmental activists, "Friends of the Park" group leaders, or residents
 
 ## Personas
 
-### Persona 1 — [Name]
+### Persona 1 — Eshwar 
 
 | | |
 |---|---|
-| **Age** | |
-| **Role / Occupation** | |
-| **Goals** | |
-| **Frustrations** | |
-| **Tech comfort** | |
+| **23** | |
+| **Msc student in Germany** | |
+| **Wants to contribute to environmental protection, needs easy event discovery and quick registration & prefers reminders and location based suggestions.** | |
+| **Hard to find nearby environmental events, doesn't get reminders.** | |
+| **Uses smartphones, apps and websites daily. Comfortable with registration, filters and notifs.** | |
 
 ### Persona 2 — [Name]
 
