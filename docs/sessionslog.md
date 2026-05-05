@@ -31,3 +31,6 @@ Added personas, imagined scenarios, made kanban style project timeline scheduler
 
 ## Mogili Vineeth Reddy
 Used visual studio , added personas , learned how the project process goes and how to make scenarios.
+
+## Yogesh Chelluboina
+Learned how to create personas and scenarios to better understand the needs of different users.
