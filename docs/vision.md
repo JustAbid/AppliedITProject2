@@ -40,19 +40,19 @@ Local environmental activists, "Friends of the Park" group leaders, or residents
 |---|---|
 | **Age** | 30|
 | **Role / Occupation** |IT employee in Berlin |
-| **Goals** |WWants flexible volunteering options, Needs clear event duration and commitment level & prefers trusted, well-organised events.|
+| **Goals** |Wants flexible volunteering options, Needs clear event duration and commitment level & prefers trusted, well-organised events.|
 | **Frustrations** |Events don't clearly mention time commitment. Most activities happen during working hours.|
 | **Tech comfort** |Uses digital tools for work (apps, calendars, emails) & prefers fast, efficient, and clear interfaces.|
 
-### Persona 3 — [Name]
+### Persona 3 — [Simon]
 
 | | |
 |---|---|
-| **Age** | |
-| **Role / Occupation** | |
-| **Goals** | |
-| **Frustrations** | |
-| **Tech comfort** | |
+| **Age** |45 |
+| **Role / Occupation** |Guitarist |
+| **Goals** |Gain practical experience, Meet local residents with similar values, potentially finding others interested in acoustic music or community arts. |
+| **Frustrations** |Frustrated by events that lack clear start/end times or specific tasks, making it feel like a waste of time. |
+| **Tech comfort** |As a musician,wants to filter for events with a social "after-party" or jam session, so that to connect with other creative locals. |
 
 ---
 
