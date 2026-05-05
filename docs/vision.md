@@ -6,19 +6,19 @@ _Due: Session 5 — 05 May_
 
 ## Vision Statement
 
-> **For** [Society]  
-> **Who** [have this problem / need]  
-> **Our product** [EcoConnect]  
-> **Is a** [category]  
-> **That** [Environmental Impact / community Building]  
-> **Unlike** [current alternative]  
-> **Our product** [Sustainability, mental welness, Hyper-local event discovery]
+> **For** environmentally conscious students, local residents, and community volunteers  
+> **Who** struggle to discover and participate in nearby environmental volunteering activities  
+> **Our product** EcoConnect  
+> **Is a** Application
+> **That** connects users with local sustainability events, promotes environmental impact, and strengthens community involvement
+> **Unlike** traditional social media platforms or generic event listing websites  
+> **Our product** focuses on hyper-local eco-events, mental well-being through community participation, and easy volunteer engagement
 
 ---
 
 ## Target Users
 
-_Who will use this product? Be specific — not "everyone", but a defined group._
+Local environmental activists, "Friends of the Park" group leaders, or residents of canal-side communities.
 
 ---
 
@@ -62,21 +62,22 @@ Format: _As a [persona], I want [goal], so that [benefit]._
 
 | # | Persona | User Story | Priority |
 |---|---|---|---|
-| US-01 | | | Must-have |
-| US-02 | | | Must-have |
-| US-03 | | | Must-have |
-| US-04 | | | Should-have |
-| US-05 | | | Could-have |
+| US-01 | Student |As a student, I want to filter volunteering events by date and time, so that I can find eco-activities that fit around my lecture schedule. | Must-have |
+| US-02 |Community Leader |As a "Friends of the Park" leader, I want to create and manage an event listing, so that I can track how many volunteers are coming and prepare enough equipment. | Must-have |
+| US-03 |Local Resident |As a resident, I want to view an event’s location on a map and see "what to bring" instructions, so that I can arrive at the right place with the correct gear. | Must-have |
+| US-04 |Eco-Activist |As an activist, I want a personal dashboard that shows my past contributions, so that I can track my environmental impact and feel a sense of accomplishment. | Should-have |
+| US-05 |New Volunteer |As a first-time volunteer, I want to see a short bio or "mental well-being" focus for each event, so that I can choose an activity that feels welcoming and low-stress. | Could-have |
 
 ---
 
 ## Feature List
 
-_List the core features your product must have for a working MVP._
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
+- Browse local environmental events
+- Create and manage volunteering events
+- RSVP / Join events
+- Event details page with date, location, and description
+- User dashboard/profile
+- Basic search and filtering for events
 
 ---
 
@@ -88,7 +89,10 @@ _Insert photos of your whiteboard sketches, hand-drawn wireframes, or Figma link
 
 ## Out of Scope (v1)
 
-_Things you are explicitly NOT building in this course._
-
--
--
+- Real-time chat system
+- AI recommendation engine
+- Payment integration or donations
+- Native iOS/Android applications
+- Advanced analytics dashboard
+- Social media-style posting/feed system
+- Multi-language support
