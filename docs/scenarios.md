@@ -6,7 +6,7 @@ Objective: To find and register for a local environmental event within a limited
 
 Actors: Eshwar (23-year-old MSc student in Germany).
 
-Activities: It’s Friday morning, and Eshwar finishes his lectures early. He opens the "Eco-Action" app on his smartphone while walking to the U-Bahn station. He filters the map for "Tomorrow" and "Within 5km." He finds a "Forest Litter Clean-up" event scheduled for Saturday at 10:00 AM in a nearby park. He taps "Quick Register," and the app automatically pulls his name and university email to complete the form. He then clicks the "Sync to Calendar" button.
+Activities: It’s Friday morning, and Eshwar finishes his lectures early. He opens the "EcoConnect" app on his smartphone while walking to the U-Bahn station. He filters the map for "Tomorrow" and "Within 5km." He finds a "Forest Litter Clean-up" event scheduled for Saturday at 10:00 AM in a nearby park. He taps "Quick Register," and the app automatically pulls his name and university email to complete the form. He then clicks the "Sync to Calendar" button.
 
 Problem / Gap: In the past, Eshwar would find these events on old bulletin boards or complex websites, but he often forgot the exact time or location because there was no way to save them. The existing manual systems don't provide real-time updates if the meeting point changes due to weather.
 
