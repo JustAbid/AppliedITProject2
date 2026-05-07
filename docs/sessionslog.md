@@ -37,3 +37,7 @@ Learned how to create personas and scenarios to better understand the needs of d
 
 ## Amarendar Reddy
 Learned how to fetch, pull, create branch, commit, and learned about github and visual studio.
+
+## Akash pulluri
+Learned about visual studio
+
