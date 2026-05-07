@@ -47,3 +47,10 @@ Learned about visual studio
 Today we had a scrum meeting, we discussed our progress, where we currently stand and the future work to complete. The work was completed by the end of the session. We also exchanged our ideas with other groups, we gave and received feedback. One feedback was to add other events if possible such as sports related. For example, marathon event maybe..!
 - To answer last 2 questions, User stories were the most useful concept for my project because they helped me clearly understand what the user needs in a simple and structured way. By writing user stories, I was able to focus on the user’s goals and design features that directly solve their problems. This made the system more user-centered and practical.
 - Moving to the last question, initially, I assumed that users only need basic features like event listings, but this workshop showed that they also need reminders, easy registration, and personalized suggestions. Writing user stories helped me realize the importance of user convenience and experience. This changed my approach to focus more on user needs rather than just features.
+
+## Mogili Vineeth Reddy
+
+interracted with different teams and known about their project ideas
+Nithin - SafestayAI
+Deepthi - AIFashionstylist
+Lalith - wearitright 
