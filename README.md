@@ -8,7 +8,7 @@ This platform connects people with local environmental volunteering events, help
 | Product Owner | Mohammed Abid Ali Sameer |
 | Scrum Master |yogesh chelluboina |
 | Developer | Amarendar Reddy|
-| Developer | |
+| Developer | Mogili Vineeth Reddy |
 | Developer | |
 
 ## Project Overview

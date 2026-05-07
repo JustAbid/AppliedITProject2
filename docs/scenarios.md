@@ -1,6 +1,6 @@
 # Scenario -1
 
-| **Scenario** |The Saturday Forest Clean-up|
+Scenario: The Saturday Forest Clean-up
 
 Objective: To find and register for a local environmental event within a limited weekend timeframe.
 
