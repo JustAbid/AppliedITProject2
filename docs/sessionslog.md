@@ -54,3 +54,13 @@ interracted with different teams and known about their project ideas
 Nithin - SafestayAI
 Deepthi - AIFashionstylist
 Lalith - wearitright 
+
+## Yogesh Chelluboina
+
+Today we had a meeting about the Scrum Master role and upcoming project changes. We discussed ideas and scenarios from different groups and exchanged feedback with each other.
+Reflection Questions:
+1
+Scenarios were the most useful concept for my project because they helped me understand how users interact with the system in real-life situations. Instead of just listing features, scenarios allowed me to identify user needs, problems, and possible solutions clearly. This made it easier to design a more user-friendly and practical application.
+2
+Initially, I assumed that users could easily find environmental events online, but this workshop showed that information is often scattered and not easily accessible. I also realized that users need reminders and personalized suggestions to stay engaged. This changed my approach to focus more on simplicity and user convenience.
+
