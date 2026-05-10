@@ -43,7 +43,7 @@
 ## Pain Point → Feature Mapping
 
 <p align="center">
-  <img src="Images/painpoint-feature-mapping.png" width="1000"/>
+  <img src="Images/painpoint-feature-mapping.png" width="800"/>
   <br>
   <em>Figure 1: Pain Point to Feature Mapping for EcoConnect</em>
 </p>
