@@ -40,6 +40,12 @@
 
 ---
 
+## Pain Point → Feature Mapping
+
+![Pain Point Mapping](images/painpoint-feature-mapping.png)
+
+---
+
 # Trade-offs and Design Decisions
 
 ## Simplicity vs Functionality
