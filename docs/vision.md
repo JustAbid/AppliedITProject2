@@ -42,7 +42,7 @@
 
 ## Pain Point → Feature Mapping
 
-![Pain Point Mapping](images/painpoint-feature-mapping.png)
+![Pain Point Mapping](Images/painpoint-feature-mapping.png)
 
 ---
 
