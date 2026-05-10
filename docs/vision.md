@@ -1,7 +1,5 @@
 # Product Vision Document
 
-_Due: Session 5 — 05 May_
-
 ---
 
 ## Vision Statement
@@ -9,85 +7,59 @@ _Due: Session 5 — 05 May_
 > **For** environmentally conscious students, local residents, and community volunteers  
 > **Who** struggle to discover and participate in nearby environmental volunteering activities  
 > **Our product** EcoConnect  
-> **Is a** Website
-> **That** connects users with local sustainability events, promotes environmental impact, and strengthens community involvement
+> **Is a** community-driven environmental volunteering platform/website  
+> **That** connects users with local sustainability events, promotes environmental impact, and strengthens community involvement  
 > **Unlike** traditional social media platforms or generic event listing websites  
 > **Our product** focuses on hyper-local eco-events, mental well-being through community participation, and easy volunteer engagement
 
 ---
 
-## Target Users
+# Target Users
 
-Local environmental activists, "Friends of the Park" group leaders, or residents of canal-side communities.
-
----
-
-## Personas
-
-### Persona 1 — Eshwar 
-
-| | |
-|---|---|
-| **Age** |23|
-| **Role / Occupation** |Msc student in Germany|
-| **Goals** |Wants to contribute to environmental protection, needs easy event discovery and quick registration & prefers reminders and location based suggestions.|
-| **Frustrations** |Hard to find nearby environmental events, doesn't get reminders.|
-| **Tech comfort** |Uses smartphones, apps and websites daily. Comfortable with registration, filters and notifs.|
-
-### Persona 2 — [Preetham]
-
-| | |
-|---|---|
-| **Age** | 30|
-| **Role / Occupation** |IT employee in Berlin |
-| **Goals** |Wants flexible volunteering options, Needs clear event duration and commitment level & prefers trusted, well-organised events.|
-| **Frustrations** |Events don't clearly mention time commitment. Most activities happen during working hours.|
-| **Tech comfort** |Uses digital tools for work (apps, calendars, emails) & prefers fast, efficient, and clear interfaces.|
-
-### Persona 3 — [Simon]
-
-| | |
-|---|---|
-| **Age** |45 |
-| **Role / Occupation** |Guitarist |
-| **Goals** |Gain practical experience, Meet local residents with similar values, potentially finding others interested in acoustic music or community arts. |
-| **Frustrations** |Frustrated by events that lack clear start/end times or specific tasks, making it feel like a waste of time. |
-| **Tech comfort** |As a musician,wants to filter for events with a social "after-party" or jam session, so that to connect with other creative locals. |
+- University students interested in sustainability and volunteering
+- Local residents looking for nearby eco-friendly activities
+- Community organisers hosting environmental events
+- Environmental activists and NGOs
+- Young professionals seeking meaningful weekend activities
 
 ---
 
-## User Stories
+# Feature List
 
-Format: _As a [persona], I want [goal], so that [benefit]._
-
-| # | Persona | User Story | Priority |
-|---|---|---|---|
-| US-01 | Student |As a student, I want to filter volunteering events by date and time, so that I can find eco-activities that fit around my lecture schedule. | Must-have |
-| US-02 |Community Leader |As a "Friends of the Park" leader, I want to create and manage an event listing, so that I can track how many volunteers are coming and prepare enough equipment. | Must-have |
-| US-03 |Local Resident |As a resident, I want to view an event’s location on a map and see "what to bring" instructions, so that I can arrive at the right place with the correct gear. | Must-have |
-| US-04 |Eco-Activist |As an activist, I want a personal dashboard that shows my past contributions, so that I can track my environmental impact and feel a sense of accomplishment. | Should-have |
-| US-05 |New Volunteer |As a first-time volunteer, I want to see a short bio or "mental well-being" focus for each event, so that I can choose an activity that feels welcoming and low-stress. | Could-have |
-
----
-
-## Feature List
-
-- Browse local environmental events
-- Create and manage volunteering events
-- RSVP / Join events
-- Event details page with date, location, and description
-- User dashboard/profile
-- Basic search and filtering for events
+| Feature Name | Description | Source |
+|---|---|---|
+| Event Discovery | Users can browse nearby environmental volunteering events. | Scenario |
+| Event Filtering | Users can filter events by location, date, and category. | User Stories |
+| Event Creation & Management | Organisers can create, edit, and manage volunteering events. | User Stories |
+| RSVP / Quick Registration | Users can quickly join events using saved profile information. | Scenario |
+| Interactive Map Integration | Users can view event locations using map integration. | Scenario |
+| Notifications & Reminders | Users receive reminders and updates about upcoming events. | Scenario |
+| Calendar Synchronisation | Users can sync events directly with their personal calendars. | Scenario |
+| User Dashboard | Users can track joined events and participation history. | User Stories |
+| Event Details Page | Displays descriptions, timings, required equipment, and instructions. | Vision |
 
 ---
 
-## Wireframes / Sketches
+# Trade-offs and Design Decisions
 
-_Insert photos of your whiteboard sketches, hand-drawn wireframes, or Figma link here._
+## Simplicity vs Functionality
+
+We discussed whether to include advanced social networking features such as public posting and direct messaging. While these features may improve engagement, they would increase system complexity and distract from the core volunteering experience.
+
+### Decision:
+We will focus on simple event discovery, registration, and participation rather than developing a full social media platform.
 
 ---
 
-## Out of Scope (v1)
+# Wireframes / Sketches
+
+- Home page wireframe created during group brainstorming session
+
+(Insert whiteboard sketches, screenshots, or Figma links here.)
+
+---
+
+# Out of Scope (v1)
 
 - Real-time chat system
 - AI recommendation engine
@@ -96,3 +68,6 @@ _Insert photos of your whiteboard sketches, hand-drawn wireframes, or Figma link
 - Advanced analytics dashboard
 - Social media-style posting/feed system
 - Multi-language support
+- Gamification and reward systems
+
+---
