@@ -69,6 +69,7 @@ Initially, I assumed that users could easily find environmental events online, b
 ## Mohammed Abid Ali Sameer
 
 We had the activity to download and setup VM. I already had VM Box and also Ubuntu. So I proceeded to step 3 which was to setup openssh, establish a connection between host and vm and to transfer files. I had 2 ways:
-    - Using FileZilla to drag and drop files to send between the host and VM.
-    - Using SSH connection to securely connect to my VM from my host using powershell or    putty. I tried both ways and created a dummy test.txt file to transfer from host to vm using scp commands. 
+- Using FileZilla to drag and drop files to send between the host and VM.
+- Using SSH connection to securely connect to my VM from my host using powershell or    putty. I tried both ways and created a dummy test.txt file to transfer from host to vm using scp commands. 
+
 The setup is completed, the connection was made,transferring files also worked. 
