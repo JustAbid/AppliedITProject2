@@ -73,3 +73,13 @@ We had the activity to download and setup VM. I already had VM Box and also Ubun
 - Using SSH connection to securely connect to my VM from my host using powershell or    putty. I tried both ways and created a dummy test.txt file to transfer from host to vm using scp commands. 
 
 The setup is completed, the connection was made,transferring files also worked. 
+
+# 12/05/2026
+
+## Mogili Vineeth Reddy
+
+In this activity, we had to download and set up a Virtual Machine (VM). Since I already had VirtualBox and Ubuntu installed, I jumped straight to step 3: setting up OpenSSH, connecting my host machine to the VM, and transferring files.
+I tried two different methods to do this:
+FileZilla: I used this to easily drag and drop files back and forth between my host and the VM.
+SSH Connection: I securely connected to my VM from the host using PowerShell and PuTTY.
+To test it out, I created a file called test.txt and successfully transferred it from my host to the VM using scp commands.
