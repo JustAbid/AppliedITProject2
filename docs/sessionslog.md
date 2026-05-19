@@ -83,3 +83,16 @@ I tried two different methods to do this:
 FileZilla: I used this to easily drag and drop files back and forth between my host and the VM.
 SSH Connection: I securely connected to my VM from the host using PowerShell and PuTTY.
 To test it out, I created a file called test.txt and successfully transferred it from my host to the VM using scp commands.
+
+
+# 12/05/2026
+
+## Mohammed Abid Ali Sameer
+
+So today,I installed nginx server, started the server and I made a dummy HTML file, sent it to my Ubuntu from my windows using "scp" command. The server was running perfecty, the index file was loaded and displayed my desired content on my url or the ip address or the server. 
+
+### VPS Provider Research Activity
+
+Next, I researched various VPS providers as part of the class activity. The research focused on comparing hosting providers available in both Germany and India. I explored factors such as pricing, server performance, scalability, storage, support, and suitability for hosting web applications and dashboard systems.
+
+Some of the providers researched included Hetzner, Contabo, IONOS, Hostinger, DigitalOcean, Vultr, and AWS Lightsail. This activity helped me in understanding different cloud hosting options and identifying suitable VPS solutions for future project deployment and collaborative access.
