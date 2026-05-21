@@ -96,3 +96,12 @@ So today,I installed nginx server, started the server and I made a dummy HTML fi
 Next, I researched various VPS providers as part of the class activity. The research focused on comparing hosting providers available in both Germany and India. I explored factors such as pricing, server performance, scalability, storage, support, and suitability for hosting web applications and dashboard systems.
 
 Some of the providers I researched included Hetzner, Contabo, IONOS, Hostinger, DigitalOcean, Vultr, and AWS Lightsail. This activity helped me in understanding different cloud hosting options and identifying suitable VPS solutions for future project deployment and collaborative access.
+
+## Yogesh Chelluboina
+
+Installed the Nginx server and successfully started it on my Ubuntu system. I created a dummy HTML file on my Windows machine and transferred it to Ubuntu using the scp command.
+
+DigitalOcean, Amazon Web Services, and Google Cloud offer reliable VPS solutions with data centres close to India, ensuring good performance and scalability.
+Indian providers like Hostinger, BigRock, and HostGator India provide affordable VPS plans with local support.
+These VPS services give users dedicated resources such as CPU, RAM, and storage, making them suitable for hosting websites, applications, and databases.
+They also offer features like root access, customizable configurations, and high uptime, which are ideal for developers and businesses.
