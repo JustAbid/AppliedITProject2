@@ -105,3 +105,8 @@ DigitalOcean, Amazon Web Services, and Google Cloud offer reliable VPS solutions
 Indian providers like Hostinger, BigRock, and HostGator India provide affordable VPS plans with local support.
 These VPS services give users dedicated resources such as CPU, RAM, and storage, making them suitable for hosting websites, applications, and databases.
 They also offer features like root access, customizable configurations, and high uptime, which are ideal for developers and businesses.
+
+
+## Yogesh Chelluboina
+
+Today, I worked on Docker by running a basic Nginx container and understanding how containerized web servers function. I created a project folder with a custom index.html file and successfully served it using Nginx. After testing the default setup, I stopped the container and implemented a bind mount to link my local project directory with the container. This allowed me to test live reload functionality, where changes in the HTML file were reflected instantly in the running container. I also explored Docker Compose basics to understand how multi-container configurations can be managed efficiently. 
