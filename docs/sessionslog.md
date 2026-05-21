@@ -113,4 +113,4 @@ Today, I worked on Docker by running a basic Nginx container and understanding h
 
 ## Amarendar Reddy
 
-Today, I worked on Docker by running a basic Nginx container and understanding how containerized web servers function. I created a project folder with a custom index.html file and successfully served it using Nginx. After testing the default setup, I stopped the container and implemented a bind mount to link my local project directory with the container. This allowed me to test live reload functionality, where changes in the HTML file were reflected instantly in the running container. I also explored Docker Compose basics to understand how multi-container configurations can be managed efficiently.
+Today, I dove into Docker and set up a basic Nginx web server. I started by serving a simple custom HTML page, and then took it a step further by setting up a bind mount. This linked my local project folder directly to the container, giving me instant live updates whenever I changed the code. To wrap things up, I started exploring Docker Compose to see how it simplifies managing multi-container setups.
