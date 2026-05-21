@@ -110,3 +110,5 @@ They also offer features like root access, customizable configurations, and high
 ## Yogesh Chelluboina
 
 Today, I worked on Docker by running a basic Nginx container and understanding how containerized web servers function. I created a project folder with a custom index.html file and successfully served it using Nginx. After testing the default setup, I stopped the container and implemented a bind mount to link my local project directory with the container. This allowed me to test live reload functionality, where changes in the HTML file were reflected instantly in the running container. I also explored Docker Compose basics to understand how multi-container configurations can be managed efficiently. 
+
+## Amarendar Reddy
