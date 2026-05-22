@@ -114,3 +114,9 @@ Today, I worked on Docker by running a basic Nginx container and understanding h
 ## Amarendar Reddy
 
 Today, I dove into Docker and set up a basic Nginx web server. I started by serving a simple custom HTML page, and then took it a step further by setting up a bind mount. This linked my local project folder directly to the container, giving me instant live updates whenever I changed the code. To wrap things up, I started exploring Docker Compose to see how it simplifies managing multi-container setups.
+
+## Mogili Vineeth Reddy
+
+"Today, I advanced my development workflow by containerizing a web application using Docker and configuring an Nginx web server to manage the deployment. 
+I successfully engineered a local development environment that serves a custom static HTML file over a secure HTTPS connection by implementing SSL/TLS encryption and setting up localhost port mapping. 
+This containerized architecture allows for seamless local integration testing, ensuring the project can be securely validated and accessed exactly as it would behave in a production environment."
