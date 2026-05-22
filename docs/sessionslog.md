@@ -106,6 +106,12 @@ Indian providers like Hostinger, BigRock, and HostGator India provide affordable
 These VPS services give users dedicated resources such as CPU, RAM, and storage, making them suitable for hosting websites, applications, and databases.
 They also offer features like root access, customizable configurations, and high uptime, which are ideal for developers and businesses.
 
+# 21/05/2026
+
+## Mohammed Abid Ali Sameer
+
+In today's hands on lab session, I transitioned our local web infrastructure development from traditional VM resource hosting to a modern, lightweight containerized concpet using Docker. I successfully installed and initialized the Docker Desktop engine on my Windows host machine, navigating initial system subsystem configurations by updating my Windows Subsystem for Linux (WSL 2) kernel backbone. I then created a project folder scheme (C:\docker-webserver\html) containing custom HTML page. I successfully mapped this workspace directly into an isolated Nginx Alpine container image instance using live read only(ro) Bind Mount data volumes to bypass manual production build pipelines. Finally, I also used and understood Docker compose command to run or bring up my container rather than using long docker commands, troubleshooting runtime namespace clashes and strict YAML structural indentation formats along the way.
+- I used this command "docker compose logs -f web" to check my logs and I can  make out that service was started or initialized successfully. First, the container boots up by automatically configuring its internal scripts and splitting the workload across eight separate worker engine streams to optimize my CPU performance. Second, it successfully tracks traffic coming from my Windows browser, smartly returning a 304 status code which proves it is using web caching to save network memory instead of reloading unchanged files. Finally, when I turn the server off, it receives a safe shutdown command (SIGQUIT), allowing all internal processes to close their connections gracefully and exit with a perfect success code (code 0) without corrupting any of my files or other files.
 
 ## Yogesh Chelluboina
 
