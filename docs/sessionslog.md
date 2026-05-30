@@ -126,3 +126,9 @@ Today, I dove into Docker and set up a basic Nginx web server. I started by serv
 "Today, I advanced my development workflow by containerizing a web application using Docker and configuring an Nginx web server to manage the deployment. 
 I successfully engineered a local development environment that serves a custom static HTML file over a secure HTTPS connection by implementing SSL/TLS encryption and setting up localhost port mapping. 
 This containerized architecture allows for seamless local integration testing, ensuring the project can be securely validated and accessed exactly as it would behave in a production environment."
+
+# 26/05/2026
+
+## Mohammed Abid Ali Sameer
+
+Today we had to deliver our mid term presentation. I as part of Group C, did my work, delivered the presentation on time and within the time limit. It went fabulous. The presentation was pretty well delivered, we co-ordinated perfectly even tho we had few hiccups , we were in sync and everything went perfectly fine. Excited for the next seminar :) 
