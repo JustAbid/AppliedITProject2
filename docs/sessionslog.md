@@ -160,7 +160,6 @@ Strengthened the ability to communicate technical workflows and user-centered de
 Improved confidence in handling real-time academic feedback and technical Q&As.
 
 
-#  02-06-2026
 ## Mogili Vineeth Reddy
 
 *What I Worked On:*
