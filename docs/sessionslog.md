@@ -183,6 +183,10 @@ Improved confidence in handling real-time academic feedback and technical Q&As.
 - Learned how React components interact with backend APIs using fetch.
 - Understood the importance of keeping business logic inside the service layer.
 
+## Mohammed Abid Ali Sameer
+
+As per the assignment, I developed an application to manage tasks with FastAPI and React in this lesson. I performed backend development using the MVC framework. Then, I designed APIs for handling tasks through various actions such as creation, viewing, and deletion of tasks. For validation, I implemented Pydantic models. The frontend was linked with the APIs, and CRUD operations were developed, allowing users to perform tasks of adding and deleting. Finally, I conducted the testing process by using the Swagger user interface. With this project, I have become familiar with the route organization system of FastAPI, data validation with Pydantic, and communication between frontend and backend through APIs. I left the session midway as I was sick. I will complete the following exercises in next session.
+
 # 04-06-2026
 ## Mogili Vineeth Reddy
 
@@ -201,3 +205,8 @@ Improved confidence in handling real-time academic feedback and technical Q&As.
 - Improved my understanding of creating and testing RESTful APIs using FastAPI and Swagger UI.
 - Learned how React components interact with backend services through API calls and how frontend actions trigger backend operations.
 - Understood the importance of organizing business logic within the service layer to improve code structure and scalability.
+
+## Mohammed Abid Ali Sameer
+
+I continued my last exercise as well as the following ones. I added UI, add minimal styling. During this session, I continued working on the Task Manager application developed using FastAPI and React. I worked on both the backend and frontend components, implementing task management features such as creating, viewing, and deleting tasks. I integrated the React frontend with the FastAPI backend through API calls and ensured smooth communication between both layers. In addition, I improved the user interface by adding basic styling and making the application more user-friendly. I also tested the API endpoints using Swagger UI to verify their functionality. Through this work, I gained a better understanding of the MVC architecture, FastAPI routing, Pydantic validation, REST API development, and frontend-backend integration. I also learned the importance of organizing business logic properly and creating a clean, maintainable application structure.
+I also implemented persistent storage. I used sqlite DB to store the records or tasks. It was getting messy but I used Claude to help me understand and add the Database functionality.
