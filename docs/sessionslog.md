@@ -132,3 +132,73 @@ This containerized architecture allows for seamless local integration testing, e
 ## Mohammed Abid Ali Sameer
 
 Today we had to deliver our mid term presentation. I as part of Group C, did my work, delivered the presentation on time and within the time limit. It went fabulous. The presentation was pretty well delivered, we co-ordinated perfectly even tho we had few hiccups , we were in sync and everything went perfectly fine. Excited for the next seminar :) 
+
+
+# 26-05-2026
+## Mogili Vineeth Reddy
+
+Project Name: EcoConnect
+
+Core Objective: Present the concept and workflow of EcoConnect, an AI-driven platform designed to coordinate community cleaning events, volunteer management, and local environmental initiatives.
+
+Key Achievements:
+
+Problem Defined: Highlighted the logistics gap in organizing community-led environmental cleaning and volunteer mobilization.
+
+Workflow Demonstrated: Showcased how the platform allows users to discover events, track volunteer impact via a user dashboard, and coordinate local cleaning drives.
+
+Technical Architecture: Presented the UI design and discussed AI integration for optimizing event placement and participant matching.
+
+Q&A Defense: Successfully answered feedback from the professor and peers regarding data feasibility, event coordination, and platform scalability.
+
+Key Takeaways:
+
+Mastered the application of technical architectures to community sustainability problems.
+
+Strengthened the ability to communicate technical workflows and user-centered design clearly.
+
+Improved confidence in handling real-time academic feedback and technical Q&As.
+
+
+#  02-06-2026
+## Mogili Vineeth Reddy
+
+*What I Worked On:*
+
+- Built a FastAPI application using the MVC architecture pattern.
+- Created Pydantic schemas for task data validation.
+- Implemented controller routes using FastAPI APIRouter.
+- Added service-layer business logic in TaskService.
+- Implemented CRUD operations (Create, Read, Delete) for tasks.
+- Tested API endpoints using Swagger UI (/docs).
+- Extended the React frontend to consume FastAPI endpoints.
+- Added task creation and deletion functionality in the frontend.
+- Connected the frontend API layer (api.js) with the backend services.
+
+*What I Learned:*
+
+- Learned how MVC separates controllers, services, and models.
+- Understood how FastAPI uses APIRouter for handling HTTP requests.
+- Learned how Pydantic validates request and response data.
+- Gained experience implementing CRUD APIs in FastAPI.
+- Learned how React components interact with backend APIs using fetch.
+- Understood the importance of keeping business logic inside the service layer.
+
+# 04-06-2026
+## Mogili Vineeth Reddy
+
+*What I Worked On:*
+
+- Developed a Task Manager application using FastAPI and React following the MVC architecture pattern.
+- Implemented CRUD operations for tasks, including task creation, retrieval, and deletion.
+- Created API routes using FastAPI APIRouter and added business logic through the service layer.
+- Connected the React frontend with the FastAPI backend by integrating API calls and updating the user interface to support task management features.
+- Tested backend endpoints using Swagger UI and verified frontend-backend communication.
+
+*What I Learned:*
+
+- Learned how the MVC architecture separates responsibilities between controllers, services, and models, making applications easier to       maintain.
+- Gained practical experience using Pydantic schemas for request and response validation in FastAPI.
+- Improved my understanding of creating and testing RESTful APIs using FastAPI and Swagger UI.
+- Learned how React components interact with backend services through API calls and how frontend actions trigger backend operations.
+- Understood the importance of organizing business logic within the service layer to improve code structure and scalability.
