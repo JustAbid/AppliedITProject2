@@ -134,7 +134,6 @@ This containerized architecture allows for seamless local integration testing, e
 Today we had to deliver our mid term presentation. I as part of Group C, did my work, delivered the presentation on time and within the time limit. It went fabulous. The presentation was pretty well delivered, we co-ordinated perfectly even tho we had few hiccups , we were in sync and everything went perfectly fine. Excited for the next seminar :) 
 
 
-# 26-05-2026
 ## Mogili Vineeth Reddy
 
 Project Name: EcoConnect
@@ -160,6 +159,7 @@ Strengthened the ability to communicate technical workflows and user-centered de
 Improved confidence in handling real-time academic feedback and technical Q&As.
 
 
+#  02-06-2026
 ## Mogili Vineeth Reddy
 
 *What I Worked On:*
