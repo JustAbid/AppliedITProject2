@@ -131,7 +131,11 @@ This containerized architecture allows for seamless local integration testing, e
 
 ## Mohammed Abid Ali Sameer
 
-Today we had to deliver our mid term presentation. I as part of Group C, did my work, delivered the presentation on time and within the time limit. It went fabulous. The presentation was pretty well delivered, we co-ordinated perfectly even tho we had few hiccups , we were in sync and everything went perfectly fine. Excited for the next seminar :) 
+Today we had to deliver our mid term presentation. I as part of Group C, did my work, delivered the presentation on time and within the time limit. It went fabulous. The presentation was pretty well delivered, we co-ordinated perfectly even tho we had few hiccups , we were in sync and everything went perfectly fine. Excited for the next seminar :)
+
+
+## Yogesh Chelluboina
+Today, our group delivered our midterm presentation. As a member of Group C, I completed my part and presented it on time while staying within the allotted time limit. The presentation went exceptionally well. Despite a few minor hiccups, our team coordinated effectively, stayed in sync throughout, and delivered a strong presentation. Everything came together smoothly, and I'm excited and looking forward to the next seminar.
 
 
 ## Mogili Vineeth Reddy
@@ -187,6 +191,18 @@ Improved confidence in handling real-time academic feedback and technical Q&As.
 
 As per the assignment, I developed an application to manage tasks with FastAPI and React in this lesson. I performed backend development using the MVC framework. Then, I designed APIs for handling tasks through various actions such as creation, viewing, and deletion of tasks. For validation, I implemented Pydantic models. The frontend was linked with the APIs, and CRUD operations were developed, allowing users to perform tasks of adding and deleting. Finally, I conducted the testing process by using the Swagger user interface. With this project, I have become familiar with the route organization system of FastAPI, data validation with Pydantic, and communication between frontend and backend through APIs. I left the session midway as I was sick. I will complete the following exercises in next session.
 
+## Yogesh Chelluboina
+
+1.Developed a task management application using **FastAPI** for the backend and **React** for the frontend as part of the assignment.
+2.Implemented the backend following the **MVC (Model-View-Controller)** architecture.
+3.Created and organized APIs to support task operations such as **creating, viewing, and deleting tasks**.
+4.Used **Pydantic models** to perform data validation and ensure data integrity.
+5.Integrated the frontend with the backend APIs for seamless communication.
+6.Implemented **CRUD functionalities**, enabling users to add, view, and delete tasks.
+7.Tested the application and APIs using the **Swagger UI** interface.
+8.Gained practical experience with **FastAPI route organization**, **Pydantic validation**, and **frontend-backend API integration**.
+
+
 # 04-06-2026
 ## Mogili Vineeth Reddy
 
@@ -210,3 +226,15 @@ As per the assignment, I developed an application to manage tasks with FastAPI a
 
 I continued my last exercise as well as the following ones. I added UI, add minimal styling. During this session, I continued working on the Task Manager application developed using FastAPI and React. I worked on both the backend and frontend components, implementing task management features such as creating, viewing, and deleting tasks. I integrated the React frontend with the FastAPI backend through API calls and ensured smooth communication between both layers. In addition, I improved the user interface by adding basic styling and making the application more user-friendly. I also tested the API endpoints using Swagger UI to verify their functionality. Through this work, I gained a better understanding of the MVC architecture, FastAPI routing, Pydantic validation, REST API development, and frontend-backend integration. I also learned the importance of organizing business logic properly and creating a clean, maintainable application structure.
 I also implemented persistent storage. I used sqlite DB to store the records or tasks. It was getting messy but I used Claude to help me understand and add the Database functionality.
+
+## Yogesh Chelluboina
+
+Continued and completed the remaining exercises from the previous session.
+Enhanced the Task Manager application by adding a simple and user-friendly UI with basic styling.
+Worked on both the FastAPI backend and React frontend to implement task creation, viewing, and deletion features.
+Integrated the frontend with the backend through REST API calls and ensured smooth communication.
+Added persistent data storage using SQLite to save and manage tasks.
+Tested API endpoints using Swagger UI to verify functionality.
+Improved my understanding of MVC architecture, FastAPI routing, Pydantic validation, and frontend-backend integration.
+Learned the importance of organizing business logic and maintaining a clean project structure.
+Used Claude as a learning aid to better understand and implement database functionality when the project became more complex.
