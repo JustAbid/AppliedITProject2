@@ -1,8 +1,17 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.controllers.task_controllers import router as task_router
+from sqlalchemy import create_engine, text
+import os
 
 app = FastAPI(title="MVC Task API")
+
+@app.get("/db-ping")
+def ping_db():
+    engine = create_engine(os.environ["DATABASE_URL"])
+    with engine.connect() as conn:
+        return {"postgres": conn.execute(text("SELECT version()")).scalar()}
+
 
 #View runs on a different origin, so CORS is required
 
