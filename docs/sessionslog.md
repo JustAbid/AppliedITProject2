@@ -246,3 +246,9 @@ Used Claude as a learning aid to better understand and implement database functi
 Today, the first part was to discuss our progress with sir and to solve if any issues in team. One recommendation that i received was to assign each issue from kanban board style projects section to each team member so that we can track the progresss and contribution of everyone. 
 The next part was the ORM, I understood what ORM is and how we can use python and its libraries to automate the SQL commands rather than hardcoding the queries or or manually typing them in our code.
 Then we moved on to hands on lab session where we completed 1st exercise, related to ORM. (Postgress, SQLAlchemy and Alembic libraries). I implemented these libraries and mapped so that backend reaches the postgres DB
+
+# 11/06/2026
+
+## Mohammed Abid Ali Sameer
+
+Today I completed the 2nd exercise. Instead of accessing DB Per request (Like adding or deleting tasks), we created a single session for all requests.
