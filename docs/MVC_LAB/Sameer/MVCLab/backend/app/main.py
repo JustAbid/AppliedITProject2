@@ -4,13 +4,18 @@ from app.controllers.task_controllers import router as task_router
 from sqlalchemy import create_engine, text
 import os
 
+from app.database import Base, engine
+from app import models
+
 app = FastAPI(title="MVC Task API")
 
-@app.get("/db-ping")
-def ping_db():
-    engine = create_engine(os.environ["DATABASE_URL"])
-    with engine.connect() as conn:
-        return {"postgres": conn.execute(text("SELECT version()")).scalar()}
+Base.metadata.create_all(bind=engine)
+
+# @app.get("/db-ping")
+# def ping_db():
+#     engine = create_engine(os.environ["DATABASE_URL"])
+#     with engine.connect() as conn:
+#         return {"postgres": conn.execute(text("SELECT version()")).scalar()}
 
 
 #View runs on a different origin, so CORS is required
