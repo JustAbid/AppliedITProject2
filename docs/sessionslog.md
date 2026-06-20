@@ -252,3 +252,15 @@ Then we moved on to hands on lab session where we completed 1st exercise, relate
 ## Mohammed Abid Ali Sameer
 
 Today I completed the 2nd exercise. Instead of accessing DB Per request (Like adding or deleting tasks), we created a single session for all requests.
+
+# 16/06/2026
+
+## Mohammed Abid Ali Sameer
+
+Today I completed the 3rd exercise.
+
+# 18/06/2026
+
+## Mohammed Abid Ali Sameer
+
+Today I completed the 4th exercise. The Advanced Challenge is pending.

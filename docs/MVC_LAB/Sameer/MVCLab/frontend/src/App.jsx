@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { fetchTasks, createTask, deleteTask } from "./services/api";
+import { fetchTasks, fetchUsers, createTask, deleteTask } from "./services/api";
 import styles from "./App.module.css";
 
 export default function App() {
     const [tasks, setTasks] = useState([]);
+    const [users, setUsers] = useState([]);
+    const [selectedOwnerId, setSelectedOwnerId] = useState("");
     const [loading, setLoading] = useState(true);
     const [title, setTitle] = useState("");
     const [saving, setSaving] = useState(false);
@@ -23,19 +25,34 @@ export default function App() {
         }
     };
 
+    const loadUsers = async () => {
+        setError(null);
+        try {
+            const data = await fetchUsers();
+            setUsers(data);
+            if (!selectedOwnerId && data.length > 0) {
+                setSelectedOwnerId(data[0].id);
+            }
+        } catch (err) {
+            console.error(err);
+            setError(err.message || "Failed to load users");
+        }
+    };
+
     useEffect(() => {
+        loadUsers();
         loadTasks();
     }, []);
 
     const handleAdd = async (e) => {
         e?.preventDefault();
         const trimmedTitle = title.trim();
-        if (!trimmedTitle) return;
+        if (!trimmedTitle || !selectedOwnerId) return;
 
         setSaving(true);
         setError(null);
         try {
-            await createTask(trimmedTitle);
+            await createTask(trimmedTitle, Number(selectedOwnerId));
             setTitle("");
             await loadTasks();
         } catch (err) {
@@ -57,6 +74,8 @@ export default function App() {
         }
     };
 
+    const usersById = Object.fromEntries(users.map((user) => [user.id, user]));
+
     return (
         <div className={styles.wrap}>
             <h1>Tasks</h1>
@@ -68,7 +87,22 @@ export default function App() {
                     onChange={(event) => setTitle(event.target.value)}
                     placeholder="New task title"
                 />
-                <button className={styles.btn} type="submit" disabled={saving || !title.trim()}>
+                <select
+                    className={styles.input}
+                    value={selectedOwnerId}
+                    onChange={(event) => setSelectedOwnerId(event.target.value)}
+                >
+                    {users.map((user) => (
+                        <option key={user.id} value={user.id}>
+                            {user.name}
+                        </option>
+                    ))}
+                </select>
+                <button
+                    className={styles.btn}
+                    type="submit"
+                    disabled={saving || !title.trim() || !selectedOwnerId}
+                >
                     {saving ? "Adding..." : "Add"}
                 </button>
             </form>
@@ -82,7 +116,12 @@ export default function App() {
             ) : (
                 tasks.map((t) => (
                     <div key={t.id} className={styles.task}>
-                        <div>{t.title}</div>
+                        <div>
+                            {t.title}
+                            <span className={styles.muted}>
+                                {usersById[t.owner_id] ? ` (${usersById[t.owner_id].name})` : ` (owner ${t.owner_id})`}
+                            </span>
+                        </div>
                         <button className={styles.delete} onClick={() => handleDelete(t.id)}>
                             Delete
                         </button>

@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from app.models import Task 
+from app.models import Task
 from sqlalchemy import select
 
 class TaskRepository:
@@ -12,8 +12,8 @@ class TaskRepository:
     def find(self, task_id: int) -> Task | None:
         return self._db.get(Task, task_id)
 
-    def add(self, title: str) -> Task:
-        task = Task(title=title)
+    def add(self, title: str, owner_id: int) -> Task:
+        task = Task(title=title, owner_id=owner_id)
         self._db.add(task)
         self._db.commit()
         self._db.refresh(task)

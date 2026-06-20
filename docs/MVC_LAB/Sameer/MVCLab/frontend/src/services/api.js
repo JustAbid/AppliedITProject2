@@ -6,11 +6,17 @@ export async function fetchTasks() {
     return res.json();
 }
 
-export async function createTask(title) {
+export async function fetchUsers() {
+    const res = await fetch(`${BASE}/users/`);
+    if (!res.ok) throw new Error("Failed to load users");
+    return res.json();
+}
+
+export async function createTask(title, owner_id) {
     const res = await fetch(`${BASE}/tasks/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title }),
+        body: JSON.stringify({ title, owner_id }),
     });
     if (!res.ok) throw new Error("Create failed");
     return res.json();
