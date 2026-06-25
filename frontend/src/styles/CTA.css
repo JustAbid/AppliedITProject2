@@ -1,0 +1,31 @@
+.cta {
+  background: linear-gradient(
+    135deg,
+    #2f8f57,
+    #1b4332
+  );
+
+  color: white;
+  text-align: center;
+  padding: 100px 10%;
+}
+
+.cta h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.cta p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.cta button {
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background: white;
+  color: #1b4332;
+  font-weight: bold;
+}
