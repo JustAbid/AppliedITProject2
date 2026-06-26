@@ -264,3 +264,15 @@ Today I completed the 3rd exercise.
 ## Mohammed Abid Ali Sameer
 
 Today I completed the 4th exercise. The Advanced Challenge is pending.
+
+# 23/06/2026
+
+## Mohammed Abid Ali Sameer
+
+We had to do Exercise 1 and 2 but I was absent. So I started doing at home.
+
+# 25/06/2026
+
+## Mohammed Abid Ali Sameer
+
+Today I completed Exercise 1 and 2. Ex 1 was about passwords and hashing them, keeping the track of hash and its id related to the user. We also looked at migration on how we can upgrade or downgrade. Ex 2 was about the json web token. We would create a json token and deploy it during the session, capture the request using postman to have a look at the token. We also validated the json token.
