@@ -2,11 +2,13 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.controllers.task_controllers import router as task_router
 from app.controllers.user_controller import router as user_router
+from app.controllers.auth_controller import router as auth_router
 from sqlalchemy import create_engine, select, text
 import os
 
 from app.database import Base, SessionLocal, engine
 from app.models import User
+from app.auth.hashing import hash_password
 from app import models
 
 app = FastAPI(title="MVC Task API")
@@ -17,11 +19,18 @@ def seed_users():
     with SessionLocal() as db:
         if db.scalars(select(User)).first() is not None:
             return
-        db.add_all([User(name="Alice"), User(name="Bob")])
+        default_hash = hash_password("password123")
+        db.add_all([
+            User(name="Alice", password_hash=default_hash),
+            User(name="Bob", password_hash=default_hash),
+        ])
         db.commit()
 
 
-seed_users()
+@app.on_event("startup")
+def on_startup():
+    seed_users()
+
 
 # @app.get("/db-ping")
 # def ping_db():
@@ -42,3 +51,4 @@ app.add_middleware(
 
 app.include_router(task_router, prefix="/tasks", tags=["tasks"])
 app.include_router(user_router, prefix="/users", tags=["users"])
+app.include_router(auth_router, prefix="/auth", tags=["auth"])
