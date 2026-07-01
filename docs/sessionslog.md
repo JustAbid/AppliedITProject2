@@ -276,3 +276,9 @@ We had to do Exercise 1 and 2 but I was absent. So I started doing at home.
 ## Mohammed Abid Ali Sameer
 
 Today I completed Exercise 1 and 2. Ex 1 was about passwords and hashing them, keeping the track of hash and its id related to the user. We also looked at migration on how we can upgrade or downgrade. Ex 2 was about the json web token. We would create a json token and deploy it during the session, capture the request using postman to have a look at the token. We also validated the json token.
+
+# 30/06/2026
+
+## Mohammed Abid Ali Sameer
+
+I attended half class and left early. So I completed exercise 3 and 4 at home.
