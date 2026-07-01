@@ -1,4 +1,4 @@
-const BASE = "http://localhost:8000";
+﻿const BASE = "http://localhost:8000";
 
 function authHeaders() {
     const token = localStorage.getItem("token");
@@ -13,7 +13,10 @@ export async function login(name, password) {
         body: form.toString(),
     });
 
-    if (!res.ok) throw new Error("Login failed");
+    if (!res.ok) {
+        const errorText = await res.text();
+        throw new Error(errorText || "Login failed");
+    }
 
     const data = await res.json();
     localStorage.setItem("token", data.access_token);
@@ -28,36 +31,51 @@ export function isLoggedIn() {
     return !!localStorage.getItem("token");
 }
 
-export async function fetchTasks() {
-    const res = await fetch(`${BASE}/tasks/`, {
-        headers: { "Content-Type": "application/json", ...authHeaders() },
+async function authedFetch(url, options = {}) {
+    const res = await fetch(url, {
+        ...options,
+        headers: {
+            "Content-Type": "application/json",
+            ...authHeaders(),
+            ...options.headers,
+        },
     });
+    if (res.status === 401) {
+        logout();
+        window.location.reload();
+        throw new Error("Session expired");
+    }
+    return res;
+}
+
+export async function fetchMe() {
+    const res = await authedFetch(`${BASE}/auth/me`);
+    if (!res.ok) throw new Error("Failed to load user");
+    return res.json();
+}
+
+export async function fetchTasks() {
+    const res = await authedFetch(`${BASE}/tasks/`);
     if (!res.ok) throw new Error("Failed to load tasks");
     return res.json();
 }
 
 export async function fetchUsers() {
-    const res = await fetch(`${BASE}/users/`, {
-        headers: { "Content-Type": "application/json", ...authHeaders() },
-    });
+    const res = await authedFetch(`${BASE}/users/`);
     if (!res.ok) throw new Error("Failed to load users");
     return res.json();
 }
 
-export async function createTask(title, owner_id) {
-    const res = await fetch(`${BASE}/tasks/`, {
+export async function createTask(title) {
+    const res = await authedFetch(`${BASE}/tasks/`, {
         method: "POST",
-        headers: { "Content-Type": "application/json", ...authHeaders() },
-        body: JSON.stringify({ title, owner_id }),
+        body: JSON.stringify({ title }),
     });
-    if (!res.ok) throw new Error("Create failed");
+    if (!res.ok) throw new Error(`Create failed: ${res.status}`);
     return res.json();
 }
 
 export async function deleteTask(id) {
-    const res = await fetch(`${BASE}/tasks/${id}`, {
-        method: "DELETE",
-        headers: authHeaders(),
-    });
+    const res = await authedFetch(`${BASE}/tasks/${id}`, { method: "DELETE" });
     if (!res.ok) throw new Error("Delete failed");
 }

@@ -4,9 +4,10 @@ from pydantic import BaseModel
 
 from app.auth.hashing import hash_password, verify_password
 from app.auth.tokens import create_access_token
+from app.auth.dependencies import get_current_user
+from app.controllers.task_controllers import get_user_repo
 from app.repositories.user_repository import UserRepository
 from app.schemas import User as UserSchema
-from app.controllers.task_controllers import get_user_repo
 
 router = APIRouter()
 
@@ -36,3 +37,8 @@ def login(form: OAuth2PasswordRequestForm = Depends(), repo: UserRepository = De
         raise HTTPException(status_code=401, detail="Incorrect credentials")
     access_token = create_access_token(user.id)
     return TokenResponse(access_token=access_token)
+
+
+@router.get("/me", response_model=UserSchema)
+def me(user = Depends(get_current_user)):
+    return user
