@@ -288,3 +288,9 @@ I attended half class and left early. So I completed exercise 3 and 4 at home.
 ## Mohammed Abid Ali Sameer
 
 We had a quiz about Auth. Then we had recap as well. Then we started testing our MVC Task Applicaiton, like writing test cases, or use of the pytest library. I finished Ex 1 in class, the test passed but with warning like something was deprecated I guess. I learned about fixtures,the testing methodology like bring in data, use fixtures then assert data. Next gotta work on Ex 2.
+
+# 07/07/2026
+
+## Mohammed Abid Ali Sameer
+
+Today I completed the Ex 4 of Testing. We had to test different Authorization Scenarios like users cant view other's tasks, or modify (edit/delete/add/view) etc. 
