@@ -2,7 +2,7 @@ import pytest
 
 from app.models import User
 from app.services.task_service import TaskService, TaskNotFoundError, NotAuthorizedError
-from tests.fakes import FakeTaskRepository, FakeUserRepository
+from tests.fakes import FakeTaskRepository
 
 
 def make_service():
@@ -10,8 +10,7 @@ def make_service():
     alice = User(id=1, name="Alice", password_hash="pw")
     bob = User(id=2, name="Bob", password_hash="pw")
     tasks = FakeTaskRepository()
-    users = FakeUserRepository([alice, bob])
-    return TaskService(tasks, users), tasks, alice, bob
+    return TaskService(tasks), tasks, alice, bob
 
 
 def test_list_tasks_returns_only_current_users_tasks():
@@ -33,7 +32,7 @@ def test_create_task_strips_whitespace_around_title():
     """create_task('  read docs  ', alice) stores title 'read docs'."""
     service, tasks, alice, _ = make_service()
 
-    task = service.create_task("  read docs  ", alice.id)
+    task = service.create_task("  read docs  ", alice)
 
     assert task.title == "read docs"
     assert [t for t in tasks.all_for_user(alice.id)] == [task]
@@ -44,7 +43,7 @@ def test_create_task_rejects_whitespace_only_title():
     service, tasks, alice, _ = make_service()
 
     with pytest.raises(ValueError):
-        service.create_task("   ", alice.id)
+        service.create_task("   ", alice)
 
     assert tasks.all_for_user(alice.id) == []
 

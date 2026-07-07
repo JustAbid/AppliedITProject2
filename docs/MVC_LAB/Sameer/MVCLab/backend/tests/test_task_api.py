@@ -24,6 +24,28 @@ def test_post_task_with_empty_title_returns_422(client):
     assert r.status_code == 422
 
 
+def test_get_tasks_omits_other_users_tasks(client, db_session, alice):
+    """GET /tasks returns only Alice's tasks, not tasks owned by Bob."""
+    from app.models import Task, User
+    from app.auth.hashing import hash_password
+
+    bob = User(name="Bob", password_hash=hash_password("password123"))
+    db_session.add(bob)
+    db_session.commit()
+
+    db_session.add_all([
+        Task(title="Alice task", owner_id=alice.id),
+        Task(title="Bob task", owner_id=bob.id),
+    ])
+    db_session.commit()
+
+    r = client.get("/tasks/")
+    assert r.status_code == 200
+    data = r.json()
+    assert len(data) == 1
+    assert data[0]["title"] == "Alice task"
+
+
 def test_get_task_by_id_returns_the_task(client):
     """POST creates a task, then GET /tasks/{id} returns the same task with 200.
     Hint: pull id out of the POST response body.
@@ -53,3 +75,20 @@ def test_delete_own_task_returns_204_then_get_returns_404(client):
     # Try to get the deleted task
     r = client.get(f"/tasks/{task_id}")
     assert r.status_code == 404
+
+
+def test_delete_other_users_task_returns_403(client, db_session, alice):
+    """Logged in as Alice, DELETE /tasks/<Bob task id> returns 403."""
+    from app.models import Task, User
+    from app.auth.hashing import hash_password
+
+    bob = User(name="Bob", password_hash=hash_password("password123"))
+    db_session.add(bob)
+    db_session.commit()
+
+    bob_task = Task(title="Bob task", owner_id=bob.id)
+    db_session.add(bob_task)
+    db_session.commit()
+
+    r = client.delete(f"/tasks/{bob_task.id}")
+    assert r.status_code == 403

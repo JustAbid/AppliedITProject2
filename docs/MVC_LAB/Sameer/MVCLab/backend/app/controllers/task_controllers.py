@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, Depends
 from app.schemas import Task, TaskCreate
 from app.repositories.task_repository import TaskRepository
 from app.repositories.user_repository import UserRepository
-from app.services.task_service import TaskService, TaskNotFoundError, NotAuthorizedError, UserNotFoundError
+from app.services.task_service import TaskService, TaskNotFoundError, NotAuthorizedError
 from app.auth.dependencies import get_current_user
 from app.models import User
 from sqlalchemy.orm import Session
@@ -21,9 +21,8 @@ def get_user_repo(db: Session = Depends(get_db)) -> UserRepository:
 
 def get_task_service(
     repo: TaskRepository = Depends(get_task_repo),
-    user_repo: UserRepository = Depends(get_user_repo),
 ) -> TaskService:
-    return TaskService(repo, user_repo)
+    return TaskService(repo)
 
 # GET tasks
 @router.get("/", response_model=list[Task])
@@ -41,9 +40,9 @@ def create_task(
     service: TaskService = Depends(get_task_service),
 ):
     try:
-        return service.create_task(payload.title, user.id)
-    except UserNotFoundError:
-        raise HTTPException(status_code=404, detail="User not found")
+        return service.create_task(payload.title, user)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc))
 
 # GET /tasks/{task_id}
 @router.get("/{task_id}", response_model=Task)
