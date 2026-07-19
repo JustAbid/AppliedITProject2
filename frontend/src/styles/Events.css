@@ -1,0 +1,142 @@
+.events-page {
+  background: #f7fbf7;
+}
+
+.events-hero {
+  background: linear-gradient(135deg, #1f7a4d 0%, #2e8b57 100%);
+  color: white;
+  padding: 90px 24px 70px;
+  text-align: center;
+}
+
+.events-hero-content {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.section-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.events-hero h1 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  margin-bottom: 14px;
+}
+
+.events-hero p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.events-section {
+  padding: 70px 24px 90px;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.event-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(14, 56, 34, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.event-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.event-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.event-tag {
+  display: inline-block;
+  width: fit-content;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #eaf7ee;
+  color: #1f7a4d;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.event-content h3 {
+  font-size: 1.3rem;
+  color: #163d25;
+}
+
+.event-meta,
+.event-location {
+  color: #4f6756;
+  font-size: 0.95rem;
+}
+
+.event-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.event-description {
+  color: #5d6d61;
+  line-height: 1.6;
+}
+
+.event-button {
+  margin-top: auto;
+  align-self: flex-start;
+  border: none;
+  border-radius: 999px;
+  background: #2e8b57;
+  color: white;
+  padding: 11px 18px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.event-button:hover {
+  background: #236b43;
+}
+
+@media (max-width: 900px) {
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .events-hero {
+    padding: 72px 18px 56px;
+  }
+
+  .events-section {
+    padding: 56px 18px 72px;
+  }
+
+  .event-content {
+    padding: 20px;
+  }
+}
