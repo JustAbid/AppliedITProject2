@@ -55,6 +55,15 @@
   box-shadow: 0 12px 32px rgba(14, 56, 34, 0.08);
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-card:hover,
+.event-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(14, 56, 34, 0.14);
+  outline: none;
 }
 
 .event-image {
@@ -105,24 +114,109 @@
   line-height: 1.6;
 }
 
-.event-button {
+.event-card-link {
   margin-top: auto;
-  align-self: flex-start;
-  border: none;
-  border-radius: 999px;
-  background: #2e8b57;
-  color: white;
-  padding: 11px 18px;
-  cursor: pointer;
+  color: #2e8b57;
   font-weight: 700;
 }
 
-.event-button:hover {
-  background: #236b43;
+.event-details-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 36, 24, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1000;
+}
+
+.event-details-modal {
+  position: relative;
+  width: min(900px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.2);
+}
+
+.event-details-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  width: 40px;
+  height: 40px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.event-details-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.event-details-body {
+  padding: 28px;
+}
+
+.event-details-intro {
+  color: #53695d;
+  line-height: 1.7;
+  margin: 14px 0 20px;
+}
+
+.event-details-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.event-details-meta > div {
+  background: #f4faf5;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.event-details-label {
+  display: inline-block;
+  margin-bottom: 6px;
+  color: #2e8b57;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.event-details-section h3 {
+  margin-bottom: 10px;
+  color: #163d25;
+}
+
+.event-details-section ul {
+  padding-left: 20px;
+  color: #53695d;
+  line-height: 1.8;
+}
+
+.event-details-capacity {
+  margin-top: 20px;
+  color: #1f7a4d;
+  font-weight: 700;
 }
 
 @media (max-width: 900px) {
   .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-details-meta {
     grid-template-columns: 1fr;
   }
 }
@@ -138,5 +232,9 @@
 
   .event-content {
     padding: 20px;
+  }
+
+  .event-details-body {
+    padding: 22px;
   }
 }

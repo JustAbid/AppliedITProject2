@@ -1,6 +1,19 @@
-function EventCard({ event }) {
+function EventCard({ event, onSelect = () => {} }) {
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      onSelect();
+    }
+  };
+
   return (
-    <article className="event-card">
+    <article
+      className="event-card"
+      role="button"
+      tabIndex={0}
+      onClick={onSelect}
+      onKeyDown={handleKeyDown}
+    >
       <img className="event-image" src={event.image} alt={event.title} />
       <div className="event-content">
         <p className="event-tag">Upcoming</p>
@@ -11,9 +24,7 @@ function EventCard({ event }) {
         </p>
         <p className="event-location">📍 {event.location}</p>
         <p className="event-description">{event.description}</p>
-        <button type="button" className="event-button">
-          {event.buttonLabel}
-        </button>
+        <p className="event-card-link">Tap to view details</p>
       </div>
     </article>
   );
