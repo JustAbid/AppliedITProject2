@@ -277,11 +277,19 @@ We had to do Exercise 1 and 2 but I was absent. So I started doing at home.
 
 Today I completed Exercise 1 and 2. Ex 1 was about passwords and hashing them, keeping the track of hash and its id related to the user. We also looked at migration on how we can upgrade or downgrade. Ex 2 was about the json web token. We would create a json token and deploy it during the session, capture the request using postman to have a look at the token. We also validated the json token.
 
+## Mogili Vineeth Reddy
+
+Today, I completed Exercises 1 and 2. Exercise 1 covered password hashing, user authentication, and database migrations. Exercise 2 focused on JSON Web Tokens (JWT), where I created, validated, and inspected tokens using Postman.
+
 # 30/06/2026
 
 ## Mohammed Abid Ali Sameer
 
 I attended half class and left early. So I completed exercise 3 and 4 at home.
+
+## Mogili Vineeth Reddy
+
+I attended only the first half of the class and completed Exercises 3 and 4 at home. This helped me stay on track with the coursework and reinforce the concepts independently.
 
 # 02/07/2026
 
@@ -289,8 +297,16 @@ I attended half class and left early. So I completed exercise 3 and 4 at home.
 
 We had a quiz about Auth. Then we had recap as well. Then we started testing our MVC Task Applicaiton, like writing test cases, or use of the pytest library. I finished Ex 1 in class, the test passed but with warning like something was deprecated I guess. I learned about fixtures,the testing methodology like bring in data, use fixtures then assert data. Next gotta work on Ex 2.
 
+## Mogili Vineeth Reddy
+
+We started the session with an authentication quiz and a quick recap. I completed Testing Exercise 1 using pytest, learned about fixtures and assertions, and successfully ran the test cases despite a deprecation warning.
+
 # 07/07/2026
 
 ## Mohammed Abid Ali Sameer
 
 Today I completed the Ex 4 of Testing. We had to test different Authorization Scenarios like users cant view other's tasks, or modify (edit/delete/add/view) etc. 
+
+## Mogili Vineeth Reddy
+
+Today, I completed Testing Exercise 4, which focused on authorization scenarios. I verified that users can only view and manage their own tasks by writing and executing test cases for different access permissions.
