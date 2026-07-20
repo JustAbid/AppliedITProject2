@@ -39,6 +39,7 @@ function EventRegistration() {
     gender: "",
     emergency_contact: "",
     additional_info: "",
+    reminder_opt_in: true,
   });
 
   useEffect(() => {
@@ -99,6 +100,7 @@ function EventRegistration() {
         gender: formData.gender.trim() || undefined,
         emergency_contact: formData.emergency_contact.trim() || undefined,
         additional_info: formData.additional_info.trim() || undefined,
+        reminder_opt_in: formData.reminder_opt_in,
         personality_responses: personalityQuestions.map((question) => ({
           question_id: question.id,
           trait: question.trait,
@@ -117,6 +119,7 @@ function EventRegistration() {
         gender: "",
         emergency_contact: "",
         additional_info: "",
+        reminder_opt_in: true,
       });
       setResponses({});
     } catch (err) {
@@ -230,6 +233,21 @@ function EventRegistration() {
                     Additional information
                     <textarea name="additional_info" rows="4" value={formData.additional_info} onChange={handleChange} />
                   </label>
+
+                  <div className="notification-toggle-card">
+                    <label className="notification-toggle-row">
+                      <input
+                        type="checkbox"
+                        name="reminder_opt_in"
+                        checked={formData.reminder_opt_in}
+                        onChange={(event) => setFormData((current) => ({ ...current, reminder_opt_in: event.target.checked }))}
+                      />
+                      <span>
+                        <strong>Send me email reminders for this event</strong>
+                        <small>We’ll email you a reminder before the event starts.</small>
+                      </span>
+                    </label>
+                  </div>
                 </div>
 
                 <button type="submit" className="submit-btn" disabled={submitting}>

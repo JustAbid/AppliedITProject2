@@ -84,6 +84,39 @@ textarea {
   font: inherit;
 }
 
+.notification-toggle-card {
+  margin-top: 0.75rem;
+  padding: 1rem;
+  border: 1px solid #d9e7df;
+  border-radius: 12px;
+  background: #f6fcf8;
+}
+
+.notification-toggle-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-weight: 600;
+  color: #144d2d;
+}
+
+.notification-toggle-row input {
+  width: auto;
+  margin: 0.2rem 0 0;
+  transform: scale(1.1);
+}
+
+.notification-toggle-row span {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.notification-toggle-row small {
+  font-weight: 500;
+  color: #4b6b57;
+}
+
 .submit-btn {
   padding: 0.9rem 1.3rem;
   border: none;
