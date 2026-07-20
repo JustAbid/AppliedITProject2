@@ -1,9 +1,9 @@
+import { Link } from "react-router-dom";
+
 function Hero() {
   return (
     <section className="hero">
-
       <div className="hero-overlay">
-
         <h1>
           Connect. Volunteer.
           <br />
@@ -19,19 +19,15 @@ function Hero() {
         </p>
 
         <div className="hero-buttons">
-
-          <button className="primary-btn">
+          <Link to="/events" className="primary-btn">
             Find Opportunities
-          </button>
+          </Link>
 
-          <button className="secondary-btn">
-            Meet The Community
-          </button>
-
+          <Link to="/events" className="secondary-btn">
+            Discover Events
+          </Link>
         </div>
-
       </div>
-
     </section>
   );
 }

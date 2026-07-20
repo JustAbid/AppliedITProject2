@@ -8,5 +8,35 @@ services:
     volumes:
       - ./frontend:/app
       - /app/node_modules
+    environment:
+      - VITE_API_URL=http://localhost:8000
     stdin_open: true
     tty: true
+
+  backend:
+    build:
+      context: ./backend
+    container_name: EcoConnect-Backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+psycopg2://postgres:postgres@db:5432/ecoconnect
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16-alpine
+    container_name: EcoConnect-DB
+    environment:
+      POSTGRES_DB: ecoconnect
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

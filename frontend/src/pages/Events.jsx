@@ -1,13 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import EventCard from "../components/EventCard";
-import events from "../data/events";
+import { fetchEvents } from "../services/api";
 import "../styles/Home.css";
 import "../styles/Events.css";
 
 function Events() {
-  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    async function loadEvents() {
+      try {
+        const data = await fetchEvents();
+        setEvents(data);
+      } catch (err) {
+        setError("Unable to load events right now.");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadEvents();
+  }, []);
 
   return (
     <>
@@ -24,66 +41,16 @@ function Events() {
         </section>
 
         <section className="events-section">
-          <div className="events-grid">
-            {events.map((event) => (
-              <EventCard
-                key={event.id}
-                event={event}
-                onSelect={() => setSelectedEvent(event)}
-              />
-            ))}
-          </div>
-        </section>
-
-        {selectedEvent && (
-          <div className="event-details-overlay" onClick={() => setSelectedEvent(null)}>
-            <div className="event-details-modal" onClick={(event) => event.stopPropagation()}>
-              <button
-                type="button"
-                className="event-details-close"
-                onClick={() => setSelectedEvent(null)}
-                aria-label="Close event details"
-              >
-                ×
-              </button>
-
-              <img className="event-details-image" src={selectedEvent.image} alt={selectedEvent.title} />
-
-              <div className="event-details-body">
-                <p className="event-tag">Featured Event</p>
-                <h2>{selectedEvent.title}</h2>
-                <p className="event-details-intro">{selectedEvent.longDescription}</p>
-
-                <div className="event-details-meta">
-                  <div>
-                    <span className="event-details-label">When</span>
-                    <p>{selectedEvent.date}</p>
-                    <p>{selectedEvent.time}</p>
-                  </div>
-                  <div>
-                    <span className="event-details-label">Where</span>
-                    <p>{selectedEvent.location}</p>
-                  </div>
-                  <div>
-                    <span className="event-details-label">Hosted by</span>
-                    <p>{selectedEvent.organizer}</p>
-                  </div>
-                </div>
-
-                <div className="event-details-section">
-                  <h3>What to expect</h3>
-                  <ul>
-                    {selectedEvent.highlights.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <p className="event-details-capacity">Capacity: {selectedEvent.capacity}</p>
-              </div>
+          {loading && <p className="events-state">Loading events...</p>}
+          {error && <p className="events-state">{error}</p>}
+          {!loading && !error && (
+            <div className="events-grid">
+              {events.map((event) => (
+                <EventCard key={event.id} event={event} />
+              ))}
             </div>
-          </div>
-        )}
+          )}
+        </section>
       </main>
       <Footer />
     </>

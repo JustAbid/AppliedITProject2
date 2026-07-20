@@ -1,3 +1,7 @@
+/* ===========================
+   EcoConnect Global Styles
+=========================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -11,8 +15,92 @@ body,
   min-height: 100vh;
 }
 
+:root {
+  --ec-green-700: #1f7a4d;
+  --ec-green-600: #2e8b57;
+  --ec-green-500: #39a96b;
+  --ec-bg: #f5fbf7;
+  --ec-text: #163d25;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #ffffff;
+  background: var(--ec-bg);
+  color: var(--ec-text);
   overflow-x: hidden;
+}
+
+/* ===========================
+   Normal Links
+=========================== */
+
+a,
+a:visited {
+  color: var(--ec-green-700);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--ec-green-600);
+  text-decoration: underline;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+/* Join Event */
+.join-btn,
+.join-btn:link,
+.join-btn:visited,
+.join-btn:hover,
+.join-btn:active {
+  background: var(--ec-green-600);
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* Hero Primary Button */
+.primary-btn,
+.primary-btn:link,
+.primary-btn:visited,
+.primary-btn:hover,
+.primary-btn:active {
+  background: var(--ec-green-600);
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* Hero Secondary Button */
+.secondary-btn,
+.secondary-btn:link,
+.secondary-btn:visited,
+.secondary-btn:hover,
+.secondary-btn:active {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* ===========================
+   Hover Effects
+=========================== */
+
+.join-btn:hover,
+.primary-btn:hover {
+  background: var(--ec-green-700);
+}
+
+.secondary-btn:hover {
+  background: white;
+  color: var(--ec-green-700) !important;
+}
+
+/* ===========================
+   Remove browser focus outline
+=========================== */
+
+button,
+a,
+input {
+  outline: none;
 }

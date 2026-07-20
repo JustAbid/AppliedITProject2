@@ -1,41 +1,32 @@
+import FeatureCard from "./FeatureCard";
+
 function Features() {
   return (
     <section className="features">
-
       <h2>Everything You Need To Create Change</h2>
 
       <div className="feature-grid">
-
-        <div className="card">
-          <h3>Discover Events</h3>
-          <p>
-            Find nearby environmental activities.
-          </p>
-        </div>
-
-        <div className="card">
-          <h3>Build Community</h3>
-          <p>
-            Meet volunteers and organisers.
-          </p>
-        </div>
-
-        <div className="card">
-          <h3>Track Impact</h3>
-          <p>
-            Monitor your participation history.
-          </p>
-        </div>
-
-        <div className="card">
-          <h3>Volunteer Support</h3>
-          <p>
-            Get reminders and event details.
-          </p>
-        </div>
-
+        <FeatureCard
+          title="Discover Events"
+          description="Find nearby environmental activities."
+          to="/events"
+        />
+        <FeatureCard
+          title="Build Community"
+          description="Meet volunteers and organisers."
+          to="/events"
+        />
+        <FeatureCard
+          title="Track Impact"
+          description="Monitor your participation history."
+          to="/events"
+        />
+        <FeatureCard
+          title="Volunteer Support"
+          description="Get reminders and event details."
+          to="/events"
+        />
       </div>
-
     </section>
   );
 }

@@ -1,5 +1,5 @@
 .events-page {
-  background: #f7fbf7;
+  background: #f5fbf7;
 }
 
 .events-hero {
@@ -55,15 +55,12 @@
   box-shadow: 0 12px 32px rgba(14, 56, 34, 0.08);
   display: flex;
   flex-direction: column;
-  cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.event-card:hover,
-.event-card:focus-visible {
+.event-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 36px rgba(14, 56, 34, 0.14);
-  outline: none;
 }
 
 .event-image {
@@ -114,58 +111,85 @@
   line-height: 1.6;
 }
 
-.event-card-link {
-  margin-top: auto;
-  color: #2e8b57;
-  font-weight: 700;
-}
-
-.event-details-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(15, 36, 24, 0.7);
+.event-card-footer {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  padding: 24px;
-  z-index: 1000;
+  gap: 12px;
+  margin-top: auto;
 }
 
-.event-details-modal {
-  position: relative;
-  width: min(900px, 100%);
-  max-height: 90vh;
-  overflow-y: auto;
+.event-capacity {
+  color: #1f7a4d;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.event-card-link {
+  color: var(--ec-green-600);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Make sure links inside cards don't show default underline */
+.event-card a,
+.event-card .link-plain,
+.event-card .event-card-link {
+  text-decoration: none;
+}
+
+/* Improve spacing for card titles and meta */
+.event-content h3 {
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+
+.event-description {
+  margin-top: 6px;
+}
+
+.events-state {
+  text-align: center;
+  color: #53695d;
+  font-size: 1rem;
+}
+
+.event-details-page {
+  background: #f5fbf7;
+}
+
+.event-details-hero {
+  padding: 50px 24px 90px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #1f7a4d;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.event-details-hero-inner {
+  max-width: 1040px;
+  margin: 0 auto;
   background: white;
   border-radius: 24px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  box-shadow: 0 14px 36px rgba(14, 56, 34, 0.08);
 }
 
-.event-details-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  border: none;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 999px;
-  width: 40px;
-  height: 40px;
-  font-size: 1.4rem;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.event-details-image {
+.detail-image {
   width: 100%;
-  height: 280px;
+  height: 300px;
   object-fit: cover;
 }
 
-.event-details-body {
+.detail-copy {
   padding: 28px;
 }
 
-.event-details-intro {
+.detail-description {
   color: #53695d;
   line-height: 1.7;
   margin: 14px 0 20px;
@@ -205,10 +229,29 @@
   line-height: 1.8;
 }
 
-.event-details-capacity {
-  margin-top: 20px;
-  color: #1f7a4d;
+.detail-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.register-btn {
+  border: none;
+  background: var(--ec-green-600);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 999px;
   font-weight: 700;
+  cursor: pointer;
+  transition: background 120ms ease, transform 100ms ease;
+}
+
+.register-btn:hover{
+  background: var(--ec-green-700);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 900px) {
@@ -230,11 +273,9 @@
     padding: 56px 18px 72px;
   }
 
-  .event-content {
+  .event-content,
+  .detail-copy {
     padding: 20px;
   }
-
-  .event-details-body {
-    padding: 22px;
-  }
 }
+

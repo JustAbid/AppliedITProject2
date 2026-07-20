@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/CTA.css";
 
 function CTA() {
@@ -10,7 +11,9 @@ function CTA() {
         a greener future.
       </p>
 
-      <button>Explore Events</button>
+      <Link to="/events" className="cta-btn">
+        Explore Events
+      </Link>
     </section>
   );
 }
