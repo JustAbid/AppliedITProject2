@@ -1,3 +1,5 @@
+import localEvents from "../data/events";
+
 const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
 function normalizeEvent(e) {
@@ -20,18 +22,46 @@ function normalizeEvent(e) {
   };
 }
 
-async function fetchJson(path) {
-  const response = await fetch(`${API_BASE_URL}${path}`);
-  if (!response.ok) throw new Error("Unable to load data");
-  return response.json();
+async function fetchJson(path, options = {}) {
+  try {
+    const response = await fetch(`${API_BASE_URL}${path}`, {
+      headers: {
+        "Content-Type": "application/json",
+        ...(options.headers || {}),
+      },
+      ...options,
+    });
+
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      throw new Error(payload.detail || "Unable to complete the request");
+    }
+    return payload;
+  } catch (error) {
+    console.warn("API request failed, falling back to local data:", error);
+    return null;
+  }
 }
 
 export async function fetchEvents() {
   const data = await fetchJson(`/api/events`);
-  return Array.isArray(data) ? data.map(normalizeEvent) : [];
+  if (Array.isArray(data) && data.length > 0) {
+    return data.map(normalizeEvent);
+  }
+  return localEvents.map((event) => normalizeEvent(event));
 }
 
 export async function fetchEventById(eventId) {
   const data = await fetchJson(`/api/events/${eventId}`);
-  return normalizeEvent(data);
+  if (data) {
+    return normalizeEvent(data);
+  }
+  return normalizeEvent(localEvents.find((event) => String(event.id) === String(eventId)) || null);
+}
+
+export async function registerForEvent(eventId, registrationData) {
+  return fetchJson(`/api/events/${eventId}/registrations`, {
+    method: "POST",
+    body: JSON.stringify(registrationData),
+  });
 }

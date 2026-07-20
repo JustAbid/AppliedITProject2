@@ -1,0 +1,136 @@
+.registration-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fff9, #eef7f3);
+}
+
+.registration-hero {
+  padding: 4rem 2rem 2rem;
+  background: linear-gradient(90deg, #0f5132, #2d7a4e);
+  color: white;
+}
+
+.registration-hero-copy h1 {
+  font-size: 2.25rem;
+  margin: 0.5rem 0;
+}
+
+.registration-content {
+  padding: 2rem;
+}
+
+.registration-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.registration-summary,
+.registration-form {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 32px rgba(15, 81, 50, 0.08);
+}
+
+.registration-summary ul {
+  padding-left: 1rem;
+  line-height: 1.8;
+}
+
+.form-section {
+  margin-bottom: 1.5rem;
+}
+
+.question-card,
+.form-section label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.question-card label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.rating-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.rating-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 500;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid #d9e7df;
+  border-radius: 10px;
+  font: inherit;
+}
+
+.submit-btn {
+  padding: 0.9rem 1.3rem;
+  border: none;
+  border-radius: 999px;
+  background: #2d7a4e;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.registration-error {
+  color: #a51f1f;
+  background: #fdecec;
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 1rem 2rem 0;
+}
+
+.registration-success {
+  color: #144d2d;
+  background: #eaf8ef;
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 1rem 2rem 0;
+}
+
+.google-form-card {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 16px;
+  background: #f3fbf6;
+}
+
+.google-form-iframe {
+  width: 100%;
+  min-height: 280px;
+  border: 1px solid #d9e7df;
+  border-radius: 12px;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .registration-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

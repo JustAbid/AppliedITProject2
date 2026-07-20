@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { fetchEventById } from "../services/api";
@@ -7,6 +7,7 @@ import "../styles/Events.css";
 
 function EventDetails() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -84,7 +85,7 @@ function EventDetails() {
 
                   <div className="detail-footer">
                     <p className="event-details-capacity">{event.available_spots ?? event.availableSpots ?? 0} volunteer spots left</p>
-                    <button type="button" className="register-btn">Register now</button>
+                    <button type="button" className="register-btn" onClick={() => navigate(`/events/${id}/register`)}>Register now</button>
                   </div>
                 </div>
               </>

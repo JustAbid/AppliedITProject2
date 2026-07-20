@@ -4,8 +4,8 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from app.database import get_db
-from app.models import Event
-from app.schemas import EventOut
+from app.models import Event, PersonalityResponse, PersonalityScore, Registration
+from app.schemas import EventOut, RegistrationCreate, RegistrationCreateResponse, RegistrationOut, PersonalityScoreOut
 
 router = APIRouter(prefix="/api/events", tags=["events"])
 
@@ -195,4 +195,93 @@ def get_event(event_id: int, db: Session = Depends(get_db)) -> EventOut:
         organizer=event.organizer,
         capacity=event.capacity,
         image=event.image,
+    )
+
+
+@router.post("/{event_id}/registrations", response_model=RegistrationCreateResponse, status_code=201)
+def create_registration(
+    event_id: int,
+    payload: RegistrationCreate,
+    db: Session = Depends(get_db),
+) -> RegistrationCreateResponse:
+    event = db.query(Event).filter(Event.id == event_id).first()
+    if not event:
+        raise HTTPException(status_code=404, detail="Event not found")
+
+    duplicate = (
+        db.query(Registration)
+        .filter(Registration.event_id == event_id, Registration.email == payload.email.lower())
+        .first()
+    )
+    if duplicate:
+        raise HTTPException(status_code=409, detail="You are already registered for this event")
+
+    if not payload.personality_responses:
+        raise HTTPException(status_code=422, detail="Please complete the personality questionnaire")
+
+    trait_totals = {trait: 0 for trait in ["openness", "conscientiousness", "extraversion", "agreeableness", "neuroticism"]}
+    for response in payload.personality_responses:
+        trait_totals[response.trait] += response.response_value
+
+    scores = {
+        "openness": trait_totals["openness"],
+        "conscientiousness": trait_totals["conscientiousness"],
+        "extraversion": trait_totals["extraversion"],
+        "agreeableness": trait_totals["agreeableness"],
+        "neuroticism": trait_totals["neuroticism"],
+    }
+
+    registration = Registration(
+        event_id=event.id,
+        full_name=payload.full_name.strip(),
+        email=payload.email.lower(),
+        phone_number=payload.phone_number,
+        organization=payload.organization,
+        age=payload.age,
+        gender=payload.gender,
+        emergency_contact=payload.emergency_contact,
+        additional_info=payload.additional_info,
+    )
+    db.add(registration)
+    db.flush()
+
+    for response in payload.personality_responses:
+        db.add(
+            PersonalityResponse(
+                registration_id=registration.id,
+                question_id=response.question_id,
+                trait=response.trait,
+                response_value=response.response_value,
+            )
+        )
+
+    db.add(
+        PersonalityScore(
+            registration_id=registration.id,
+            openness=scores["openness"],
+            conscientiousness=scores["conscientiousness"],
+            extraversion=scores["extraversion"],
+            agreeableness=scores["agreeableness"],
+            neuroticism=scores["neuroticism"],
+        )
+    )
+
+    db.commit()
+    db.refresh(registration)
+
+    return RegistrationCreateResponse(
+        registration=RegistrationOut(
+            id=registration.id,
+            event_id=registration.event_id,
+            full_name=registration.full_name,
+            email=registration.email,
+            phone_number=registration.phone_number,
+            organization=registration.organization,
+            age=registration.age,
+            gender=registration.gender,
+            emergency_contact=registration.emergency_contact,
+            additional_info=registration.additional_info,
+            created_at=str(registration.created_at),
+        ),
+        personality_scores=PersonalityScoreOut(**scores),
     )

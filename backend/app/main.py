@@ -37,21 +37,15 @@ def init_db() -> None:
 
 def ensure_event_columns() -> None:
     with engine.begin() as connection:
-        connection.execute(
-            text(
-                "ALTER TABLE events ADD COLUMN IF NOT EXISTS required_items JSON NOT NULL DEFAULT '[]';"
-            )
-        )
-        connection.execute(
-            text(
-                "ALTER TABLE events ADD COLUMN IF NOT EXISTS category VARCHAR(100) NOT NULL DEFAULT '' ;"
-            )
-        )
-        connection.execute(
-            text(
-                "ALTER TABLE events ADD COLUMN IF NOT EXISTS available_spots INTEGER NOT NULL DEFAULT 0;"
-            )
-        )
+        inspector = connection.dialect.get_columns(connection=connection, schema=None, table_name="events")
+        existing_columns = {column["name"] for column in inspector}
+
+        if "required_items" not in existing_columns:
+            connection.execute(text("ALTER TABLE events ADD COLUMN required_items JSON NOT NULL DEFAULT '[]'"))
+        if "category" not in existing_columns:
+            connection.execute(text("ALTER TABLE events ADD COLUMN category VARCHAR(100) NOT NULL DEFAULT ''"))
+        if "available_spots" not in existing_columns:
+            connection.execute(text("ALTER TABLE events ADD COLUMN available_spots INTEGER NOT NULL DEFAULT 0"))
 
 
 @app.on_event("startup")
