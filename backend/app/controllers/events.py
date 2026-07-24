@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 from app.database import get_db
 from app.models import Event, PersonalityResponse, PersonalityScore, Registration
 from app.schemas import EventOut, RegistrationCreate, RegistrationCreateResponse, RegistrationOut, PersonalityScoreOut
+from app.services.notifications import NotificationService
 
 router = APIRouter(prefix="/api/events", tags=["events"])
 
@@ -241,6 +242,7 @@ def create_registration(
         gender=payload.gender,
         emergency_contact=payload.emergency_contact,
         additional_info=payload.additional_info,
+        reminder_opt_in=payload.reminder_opt_in,
     )
     db.add(registration)
     db.flush()
@@ -281,6 +283,10 @@ def create_registration(
             gender=registration.gender,
             emergency_contact=registration.emergency_contact,
             additional_info=registration.additional_info,
+            active=registration.active,
+            reminder_opt_in=registration.reminder_opt_in,
+            reminder_status=registration.reminder_status,
+            reminder_attempts=registration.reminder_attempts,
             created_at=str(registration.created_at),
         ),
         personality_scores=PersonalityScoreOut(**scores),

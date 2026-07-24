@@ -40,6 +40,7 @@ class RegistrationCreate(BaseModel):
     gender: Optional[str] = None
     emergency_contact: Optional[str] = None
     additional_info: Optional[str] = None
+    reminder_opt_in: bool = True
     personality_responses: List[PersonalityResponseCreate]
 
 
@@ -62,6 +63,10 @@ class RegistrationOut(BaseModel):
     gender: Optional[str] = None
     emergency_contact: Optional[str] = None
     additional_info: Optional[str] = None
+    active: bool = True
+    reminder_opt_in: bool = True
+    reminder_status: str = "pending"
+    reminder_attempts: int = 0
     created_at: str
 
 
