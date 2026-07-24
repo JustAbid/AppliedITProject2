@@ -110,19 +110,11 @@ textarea {
   margin: 1rem 2rem 0;
 }
 
-.google-form-card {
+.registration-instructions {
   margin-top: 1rem;
   padding: 1rem;
-  border-radius: 16px;
-  background: #f3fbf6;
-}
-
-.google-form-iframe {
-  width: 100%;
-  min-height: 280px;
-  border: 1px solid #d9e7df;
   border-radius: 12px;
-  margin-top: 0.75rem;
+  background: #f3fbf6;
 }
 
 @media (max-width: 768px) {

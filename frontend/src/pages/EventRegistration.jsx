@@ -28,7 +28,6 @@ function EventRegistration() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-  const googleFormUrl = import.meta.env.VITE_GOOGLE_FORM_URL || "https://docs.google.com/forms";
   const [responses, setResponses] = useState({});
   const [formData, setFormData] = useState({
     full_name: "",
@@ -157,15 +156,11 @@ function EventRegistration() {
                   <li><strong>Location:</strong> {event.location}</li>
                   <li><strong>Spots left:</strong> {event.available_spots ?? 0}</li>
                 </ul>
-                <div className="google-form-card">
-                  <h3>Google Form-ready registration</h3>
+                <div className="registration-instructions">
+                  <h3>Registration</h3>
                   <p>
-                    Add your real Google Form URL to the VITE_GOOGLE_FORM_URL environment variable to embed it directly here.
+                    Please complete the personality assessment and your contact details in the form. Submitting will register you for this event and save your personality profile for future matching.
                   </p>
-                  <a href={googleFormUrl} target="_blank" rel="noreferrer">
-                    Open Google Forms
-                  </a>
-                  <iframe title="Google Form" src={googleFormUrl} className="google-form-iframe" />
                 </div>
               </aside>
 

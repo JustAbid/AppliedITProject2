@@ -9,7 +9,7 @@ function Navbar() {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/events">Events</Link></li>
         <li><a href="#">Community</a></li>
-        <li><a href="#">About</a></li>
+        <li><Link to="/about">About</Link></li>
       </ul>
 
       <Link to="/events" className="join-btn">
