@@ -124,9 +124,6 @@ The frontend expects the backend URL in `frontend/.env` as `VITE_API_URL` (defau
 ```bash
 # Backend (from backend/)
 pytest
-
-# Frontend lint (from frontend/)
-npm run lint
 ```
 
 ## API Overview
