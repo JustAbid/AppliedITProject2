@@ -1,0 +1,12 @@
+.legal-page-content {
+  max-width: 760px;
+}
+
+.legal-page-content h2 {
+  margin-top: var(--space-7);
+  margin-bottom: var(--space-3);
+}
+
+.legal-page-content h2:first-child {
+  margin-top: 0;
+}

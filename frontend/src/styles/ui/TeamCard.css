@@ -1,0 +1,28 @@
+.team-card {
+  text-align: center;
+}
+
+.team-card-image {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  margin: 0 auto var(--space-4);
+  border: 3px solid var(--color-primary-soft);
+}
+
+.team-card h3 {
+  font-size: 1.1rem;
+}
+
+.team-card-role {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: var(--space-1);
+}
+
+.team-card-contribution {
+  margin-top: var(--space-3);
+  font-size: 0.92rem;
+}

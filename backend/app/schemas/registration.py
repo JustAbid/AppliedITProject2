@@ -1,28 +1,6 @@
 from typing import List, Optional
 
-from pydantic import BaseModel, ConfigDict, Field, EmailStr
-
-
-class EventBase(BaseModel):
-    title: str
-    date: str
-    time: str
-    location: str
-    description: str
-    long_description: str = Field(alias="longDescription")
-    highlights: List[str]
-    required_items: List[str] = Field(alias="requiredItems")
-    category: str
-    available_spots: int = Field(alias="availableSpots")
-    organizer: str
-    capacity: str
-    image: str
-
-    model_config = ConfigDict(populate_by_name=True)
-
-
-class EventOut(EventBase):
-    id: int
+from pydantic import BaseModel, ConfigDict, EmailStr, Field
 
 
 class PersonalityResponseCreate(BaseModel):
@@ -39,6 +17,8 @@ class RegistrationCreate(BaseModel):
     age: Optional[int] = Field(default=None, ge=1, le=120)
     gender: Optional[str] = None
     emergency_contact: Optional[str] = None
+    emergency_contact_phone: Optional[str] = None
+    accessibility_needs: Optional[str] = None
     additional_info: Optional[str] = None
     reminder_opt_in: bool = True
     personality_responses: List[PersonalityResponseCreate]
@@ -62,12 +42,16 @@ class RegistrationOut(BaseModel):
     age: Optional[int] = None
     gender: Optional[str] = None
     emergency_contact: Optional[str] = None
+    emergency_contact_phone: Optional[str] = None
+    accessibility_needs: Optional[str] = None
     additional_info: Optional[str] = None
     active: bool = True
     reminder_opt_in: bool = True
     reminder_status: str = "pending"
     reminder_attempts: int = 0
     created_at: str
+
+    model_config = ConfigDict(from_attributes=True)
 
 
 class RegistrationCreateResponse(BaseModel):

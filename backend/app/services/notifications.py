@@ -80,8 +80,8 @@ class NotificationService:
                 self.db.query(Registration)
                 .filter(
                     Registration.event_id == event.id,
-                    Registration.active is True,
-                    Registration.reminder_opt_in is True,
+                    Registration.active.is_(True),
+                    Registration.reminder_opt_in.is_(True),
                     Registration.reminder_status != "sent",
                 )
                 .all()

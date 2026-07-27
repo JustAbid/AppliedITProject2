@@ -1,161 +1,240 @@
 .registration-page {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #f8fff9, #eef7f3);
+  background: var(--color-bg);
 }
 
-.registration-hero {
-  padding: 4rem 2rem 2rem;
-  background: linear-gradient(90deg, #0f5132, #2d7a4e);
-  color: white;
+.registration-state,
+.registration-error {
+  text-align: center;
+  padding: var(--space-6) 0;
 }
 
-.registration-hero-copy h1 {
-  font-size: 2.25rem;
-  margin: 0.5rem 0;
-}
-
-.registration-content {
-  padding: 2rem;
+.registration-error {
+  color: var(--color-danger);
+  font-weight: 600;
 }
 
 .registration-grid {
   display: grid;
-  grid-template-columns: minmax(260px, 320px) 1fr;
-  gap: 2rem;
+  grid-template-columns: 340px 1fr;
+  gap: var(--space-7);
   align-items: start;
+  max-width: 980px;
+  margin: 0 auto;
 }
 
-.registration-summary,
-.registration-form {
-  background: white;
-  border-radius: 20px;
-  padding: 1.5rem;
-  box-shadow: 0 10px 32px rgba(15, 81, 50, 0.08);
+.registration-summary {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-5));
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.registration-summary-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.registration-summary h2 {
+  font-size: 1.15rem;
+  padding: var(--space-5) var(--space-5) 0;
 }
 
 .registration-summary ul {
-  padding-left: 1rem;
-  line-height: 1.8;
-}
-
-.form-section {
-  margin-bottom: 1.5rem;
-}
-
-.question-card,
-.form-section label {
-  display: block;
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-.question-card label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.rating-group {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-top: 0.5rem;
-}
-
-.rating-option {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-weight: 500;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-input,
-textarea {
-  width: 100%;
-  margin-top: 0.4rem;
-  padding: 0.8rem 0.9rem;
-  border: 1px solid #d9e7df;
-  border-radius: 10px;
-  font: inherit;
-}
-
-.notification-toggle-card {
-  margin-top: 0.75rem;
-  padding: 1rem;
-  border: 1px solid #d9e7df;
-  border-radius: 12px;
-  background: #f6fcf8;
-}
-
-.notification-toggle-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  font-weight: 600;
-  color: #144d2d;
-}
-
-.notification-toggle-row input {
-  width: auto;
-  margin: 0.2rem 0 0;
-  transform: scale(1.1);
-}
-
-.notification-toggle-row span {
+  list-style: none;
+  padding: var(--space-4) var(--space-5);
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: var(--space-2);
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
 }
 
-.notification-toggle-row small {
-  font-weight: 500;
-  color: #4b6b57;
+.registration-summary-note {
+  padding: var(--space-4) var(--space-5) var(--space-5);
+  border-top: 1px solid var(--color-border);
 }
 
-.submit-btn {
-  padding: 0.9rem 1.3rem;
-  border: none;
-  border-radius: 999px;
-  background: #2d7a4e;
-  color: white;
+.registration-summary-note h3 {
+  font-size: 0.85rem;
+  margin-bottom: var(--space-2);
+}
+
+.registration-summary-note p {
+  font-size: 0.85rem;
+}
+
+.registration-form-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.registration-step h3 {
+  margin-bottom: var(--space-2);
+}
+
+.registration-step-intro {
+  margin-bottom: var(--space-5);
+  font-size: 0.9rem;
+}
+
+.registration-step-error {
+  margin-bottom: var(--space-4);
+}
+
+.registration-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 var(--space-4);
+}
+
+.registration-field-wide {
+  grid-column: 1 / -1;
+}
+
+.registration-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
   cursor: pointer;
+  margin-bottom: var(--space-5);
+}
+
+.registration-checkbox input {
+  margin-top: 4px;
+}
+
+.registration-checkbox span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.88rem;
+}
+
+.registration-checkbox small {
+  color: var(--color-text-muted);
+}
+
+.review-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.review-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.review-card-header h4 {
+  font-size: 0.95rem;
+}
+
+.review-edit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  background: none;
+  border: none;
+  color: var(--color-primary);
   font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
 }
 
-.registration-error {
-  color: #a51f1f;
-  background: #fdecec;
-  padding: 1rem;
-  border-radius: 12px;
-  margin: 1rem 2rem 0;
+.review-card dl {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
 }
 
-.registration-success {
-  color: #144d2d;
-  background: #eaf8ef;
-  padding: 1rem;
-  border-radius: 12px;
-  margin: 1rem 2rem 0;
+.review-card dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  font-size: 0.88rem;
 }
 
-.registration-instructions {
-  margin-top: 1rem;
-  padding: 1rem;
-  border-radius: 12px;
-  background: #f3fbf6;
+.review-card dt {
+  color: var(--color-text-muted);
+  font-weight: 600;
 }
 
-@media (max-width: 768px) {
+.review-card dd {
+  text-align: right;
+  color: var(--color-text);
+}
+
+.registration-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+
+.registration-nav-next {
+  margin-left: auto;
+}
+
+/* Success screen */
+.registration-success-inner {
+  max-width: 560px;
+  text-align: center;
+}
+
+.registration-success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  margin: 0 auto var(--space-5);
+}
+
+.registration-success-inner p {
+  margin-bottom: var(--space-6);
+}
+
+.registration-success-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+@media (max-width: 860px) {
   .registration-grid {
     grid-template-columns: 1fr;
   }
 
-  .form-grid {
+  .registration-summary {
+    position: static;
+  }
+}
+
+@media (max-width: 560px) {
+  .registration-form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .registration-form-panel {
+    padding: var(--space-4);
   }
 }

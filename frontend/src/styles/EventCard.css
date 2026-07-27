@@ -1,0 +1,131 @@
+.event-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.event-card-media {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.event-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.event-card:hover .event-card-media img {
+  transform: scale(1.06);
+}
+
+.event-card-badge {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+.event-card-bookmark {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: rgba(13, 26, 19, 0.55);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.event-card-bookmark:hover,
+.event-card-bookmark.is-active {
+  background: var(--color-primary);
+}
+
+.event-card-body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.event-card-title-link h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-3);
+}
+
+.event-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.event-card-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.event-card-description {
+  font-size: 0.9rem;
+  flex-grow: 1;
+  margin-bottom: var(--space-4);
+}
+
+.event-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.event-card-capacity {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* List layout (Events page list view) */
+.event-card-list {
+  flex-direction: row;
+}
+
+.event-card-list .event-card-media {
+  width: 260px;
+  flex-shrink: 0;
+  aspect-ratio: auto;
+}
+
+@media (max-width: 720px) {
+  .event-card-list {
+    flex-direction: column;
+  }
+
+  .event-card-list .event-card-media {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+}

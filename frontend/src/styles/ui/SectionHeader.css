@@ -1,0 +1,15 @@
+.section-header {
+  max-width: 640px;
+  margin-bottom: var(--space-8);
+}
+
+.section-header-center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.section-header-description {
+  margin-top: var(--space-3);
+  font-size: 1.05rem;
+}

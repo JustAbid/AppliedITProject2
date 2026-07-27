@@ -13,7 +13,7 @@ def reset_test_database() -> None:
     Base.metadata.drop_all(bind=engine)
     Base.metadata.create_all(bind=engine)
 
-    from app.controllers.events import seed_initial_events
+    from app.services.seed import seed_initial_events
 
     with SessionLocal() as db:
         seed_initial_events(db)

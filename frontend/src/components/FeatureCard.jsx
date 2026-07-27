@@ -1,11 +1,16 @@
-import { Link } from "react-router-dom";
+import "../styles/FeatureCard.css";
 
-function FeatureCard({ title, description, to }) {
+function FeatureCard({ icon: Icon, title, description }) {
   return (
-    <Link to={to} className="card feature-card">
+    <div className="card feature-card">
+      {Icon && (
+        <span className="feature-card-icon">
+          <Icon size={22} aria-hidden="true" />
+        </span>
+      )}
       <h3>{title}</h3>
       <p>{description}</p>
-    </Link>
+    </div>
   );
 }
 

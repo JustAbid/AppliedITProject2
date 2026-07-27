@@ -1,0 +1,126 @@
+.event-details-page {
+  background: var(--color-bg);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.event-details-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+}
+
+.event-details-media {
+  position: relative;
+}
+
+.event-details-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-details-badge {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+.event-details-copy {
+  padding: var(--space-7);
+}
+
+.event-details-description {
+  margin: var(--space-4) 0 var(--space-6);
+}
+
+.event-details-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.event-details-meta > div {
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.event-details-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-bottom: var(--space-2);
+  color: var(--color-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.event-details-section {
+  margin-bottom: var(--space-6);
+}
+
+.event-details-section h3 {
+  margin-bottom: var(--space-3);
+}
+
+.event-details-section ul {
+  padding-left: var(--space-5);
+  color: var(--color-text-muted);
+  line-height: 1.9;
+}
+
+.event-details-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+
+.event-details-capacity {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+@media (max-width: 860px) {
+  .event-details-card {
+    grid-template-columns: 1fr;
+  }
+
+  .event-details-media {
+    aspect-ratio: 16 / 9;
+  }
+
+  .event-details-copy {
+    padding: var(--space-5);
+  }
+
+  .event-details-meta {
+    grid-template-columns: 1fr;
+  }
+}

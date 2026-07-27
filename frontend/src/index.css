@@ -1,11 +1,15 @@
 /* ===========================
-   EcoConnect Global Styles
+   EcoConnect Design System
 =========================== */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -16,91 +20,268 @@ body,
 }
 
 :root {
-  --ec-green-700: #1f7a4d;
-  --ec-green-600: #2e8b57;
-  --ec-green-500: #39a96b;
-  --ec-bg: #f5fbf7;
-  --ec-text: #163d25;
+  color-scheme: light;
+
+  /* Brand */
+  --color-primary: #1f7a4d;
+  --color-primary-hover: #17603c;
+  --color-primary-soft: #e6f4ec;
+  --color-on-primary: #ffffff;
+  --color-danger: #c0392b;
+  --color-danger-hover: #a3301f;
+  --color-danger-soft: #fbe9e7;
+
+  /* Surfaces & text */
+  --color-bg: #f6faf7;
+  --color-surface: #ffffff;
+  --color-surface-alt: #eef6f1;
+  --color-text: #142b1f;
+  --color-text-muted: #4d6459;
+  --color-text-faint: #7c9186;
+  --color-border: #e0e9e3;
+  --color-border-strong: #c9d8ce;
+
+  --color-shadow: rgba(20, 45, 33, 0.08);
+  --color-shadow-strong: rgba(20, 45, 33, 0.16);
+
+  /* Type */
+  --font-family: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.5rem;
+  --space-8: 3rem;
+  --space-9: 4rem;
+  --space-10: 6rem;
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px var(--color-shadow);
+  --shadow-md: 0 8px 24px -8px var(--color-shadow);
+  --shadow-lg: 0 20px 48px -16px var(--color-shadow-strong);
+
+  /* Layout */
+  --container-max: 1280px;
+  --container-padding: 1.5rem;
+  --nav-height: 76px;
+
+  --transition-fast: 150ms ease;
+  --transition-base: 220ms ease;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-primary: #3ddc84;
+  --color-primary-hover: #2fc873;
+  --color-primary-soft: rgba(61, 220, 132, 0.14);
+  --color-on-primary: #07160f;
+  --color-danger: #f07167;
+  --color-danger-hover: #ef5c50;
+  --color-danger-soft: rgba(240, 113, 103, 0.14);
+
+  --color-bg: #0d1512;
+  --color-surface: #142019;
+  --color-surface-alt: #182720;
+  --color-text: #eaf3ee;
+  --color-text-muted: #a9bdb2;
+  --color-text-faint: #7e9488;
+  --color-border: #24352c;
+  --color-border-strong: #34483d;
+
+  --color-shadow: rgba(0, 0, 0, 0.35);
+  --color-shadow-strong: rgba(0, 0, 0, 0.55);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --color-primary: #3ddc84;
+    --color-primary-hover: #2fc873;
+    --color-primary-soft: rgba(61, 220, 132, 0.14);
+    --color-on-primary: #07160f;
+    --color-danger: #f07167;
+    --color-danger-hover: #ef5c50;
+    --color-danger-soft: rgba(240, 113, 103, 0.14);
+
+    --color-bg: #0d1512;
+    --color-surface: #142019;
+    --color-surface-alt: #182720;
+    --color-text: #eaf3ee;
+    --color-text-muted: #a9bdb2;
+    --color-text-faint: #7e9488;
+    --color-border: #24352c;
+    --color-border-strong: #34483d;
+
+    --color-shadow: rgba(0, 0, 0, 0.35);
+    --color-shadow-strong: rgba(0, 0, 0, 0.55);
+  }
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--ec-bg);
-  color: var(--ec-text);
+  font-family: var(--font-family);
+  background: var(--color-bg);
+  color: var(--color-text);
   overflow-x: hidden;
+  transition: background-color var(--transition-base), color var(--transition-base);
 }
 
-/* ===========================
-   Normal Links
-=========================== */
+img {
+  max-width: 100%;
+  display: block;
+}
 
 a,
 a:visited {
-  color: var(--ec-green-700);
+  color: inherit;
   text-decoration: none;
 }
 
-a:hover {
-  color: var(--ec-green-600);
-  text-decoration: underline;
+button {
+  font-family: inherit;
 }
 
 /* ===========================
-   BUTTONS
+   Typography
 =========================== */
 
-/* Join Event */
-.join-btn,
-.join-btn:link,
-.join-btn:visited,
-.join-btn:hover,
-.join-btn:active {
-  background: var(--ec-green-600);
-  color: #ffffff !important;
-  text-decoration: none !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
 }
 
-/* Hero Primary Button */
-.primary-btn,
-.primary-btn:link,
-.primary-btn:visited,
-.primary-btn:hover,
-.primary-btn:active {
-  background: var(--ec-green-600);
-  color: #ffffff !important;
-  text-decoration: none !important;
+h1 {
+  font-size: clamp(2.25rem, 1.5rem + 3vw, 3.5rem);
+  line-height: 1.12;
 }
 
-/* Hero Secondary Button */
-.secondary-btn,
-.secondary-btn:link,
-.secondary-btn:visited,
-.secondary-btn:hover,
-.secondary-btn:active {
-  color: #ffffff !important;
-  text-decoration: none !important;
+h2 {
+  font-size: clamp(1.75rem, 1.3rem + 2vw, 2.5rem);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.375rem;
+  line-height: 1.35;
+}
+
+p {
+  line-height: 1.7;
+  color: var(--color-text-muted);
 }
 
 /* ===========================
-   Hover Effects
+   Layout utilities
 =========================== */
 
-.join-btn:hover,
-.primary-btn:hover {
-  background: var(--ec-green-700);
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
 }
 
-.secondary-btn:hover {
-  background: white;
-  color: var(--ec-green-700) !important;
+.section {
+  padding: clamp(3.5rem, 3rem + 3vw, 6rem) 0;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: var(--space-4);
+  z-index: 1000;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--space-4);
 }
 
 /* ===========================
-   Remove browser focus outline
+   Focus & accessibility
 =========================== */
 
-button,
-a,
-input {
-  outline: none;
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===========================
+   Scroll-reveal (see Reveal.jsx)
+=========================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

@@ -1,31 +1,36 @@
-import { Link } from "react-router-dom";
+import Button from "./ui/Button";
+import "../styles/Hero.css";
+
+const HERO_IMAGE =
+  "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1800&q=80";
 
 function Hero() {
   return (
     <section className="hero">
-      <div className="hero-overlay">
-        <h1>
-          Connect. Volunteer.
-          <br />
-          Transform Your
-          <br />
-          Community.
-        </h1>
+      <div className="hero-media" aria-hidden="true">
+        <img src={HERO_IMAGE} alt="" />
+        <div className="hero-overlay" />
+      </div>
 
-        <p>
-          Discover meaningful environmental events,
-          track your impact and make a difference
-          in your local community.
+      <div className="container hero-content">
+        <p className="section-label hero-eyebrow">Local action. Lasting impact.</p>
+        <h1>
+          Connect with people.
+          <br />
+          Volunteer for the planet.
+        </h1>
+        <p className="hero-description">
+          Discover meaningful environmental events, meet people who care, and create measurable change in your local
+          community.
         </p>
 
         <div className="hero-buttons">
-          <Link to="/events" className="primary-btn">
-            Find Opportunities
-          </Link>
-
-          <Link to="/events" className="secondary-btn">
-            Discover Events
-          </Link>
+          <Button to="/events" size="lg">
+            Explore Events
+          </Button>
+          <Button to="/community" size="lg" variant="secondary" className="hero-secondary-btn">
+            Join the Community
+          </Button>
         </div>
       </div>
     </section>

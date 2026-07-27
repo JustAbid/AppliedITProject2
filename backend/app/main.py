@@ -1,17 +1,21 @@
 import asyncio
 import logging
 import os
-from typing import Optional
+import time
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
 from sqlalchemy.exc import OperationalError
 
-from app.controllers.events import router as events_router, seed_initial_events
-from app.database import Base, SessionLocal, engine
-from app.models import Event  # noqa: F401
+from app.controllers.community import router as community_router, testimonials_router
+from app.controllers.events import router as events_router
+from app.controllers.newsletter import router as newsletter_router
+from app.controllers.registrations import router as registrations_router
+from app.controllers.stats import router as stats_router
+from app.database import DATABASE_URL, SessionLocal, engine
 from app.services.notifications import NotificationService
+from app.services.seed import seed_community_content, seed_initial_events
 
 logger = logging.getLogger(__name__)
 
@@ -26,53 +30,34 @@ app.add_middleware(
 )
 
 app.include_router(events_router)
+app.include_router(registrations_router)
+app.include_router(community_router)
+app.include_router(testimonials_router)
+app.include_router(stats_router)
+app.include_router(newsletter_router)
 
 
-def init_db() -> None:
+def wait_for_database() -> None:
     for attempt in range(15):
         try:
             with engine.begin() as connection:
                 connection.execute(text("SELECT 1"))
-            Base.metadata.create_all(bind=engine)
             return
         except OperationalError:
             if attempt == 14:
                 raise
-            import time
-
             time.sleep(2)
 
 
-def ensure_event_columns() -> None:
-    with engine.begin() as connection:
-        inspector = connection.dialect.get_columns(connection=connection, schema=None, table_name="events")
-        existing_columns = {column["name"] for column in inspector}
+def run_migrations() -> None:
+    from alembic import command
+    from alembic.config import Config
 
-        if "required_items" not in existing_columns:
-            connection.execute(text("ALTER TABLE events ADD COLUMN required_items JSON NOT NULL DEFAULT '[]'"))
-        if "category" not in existing_columns:
-            connection.execute(text("ALTER TABLE events ADD COLUMN category VARCHAR(100) NOT NULL DEFAULT ''"))
-        if "available_spots" not in existing_columns:
-            connection.execute(text("ALTER TABLE events ADD COLUMN available_spots INTEGER NOT NULL DEFAULT 0"))
-
-
-def ensure_registration_columns() -> None:
-    with engine.begin() as connection:
-        inspector = connection.dialect.get_columns(connection=connection, schema=None, table_name="registrations")
-        existing_columns = {column["name"] for column in inspector}
-
-        if "active" not in existing_columns:
-            connection.execute(text("ALTER TABLE registrations ADD COLUMN active BOOLEAN NOT NULL DEFAULT TRUE"))
-        if "reminder_opt_in" not in existing_columns:
-            connection.execute(text("ALTER TABLE registrations ADD COLUMN reminder_opt_in BOOLEAN NOT NULL DEFAULT TRUE"))
-        if "reminder_status" not in existing_columns:
-            connection.execute(text("ALTER TABLE registrations ADD COLUMN reminder_status VARCHAR(50) NOT NULL DEFAULT 'pending'"))
-        if "reminder_attempts" not in existing_columns:
-            connection.execute(text("ALTER TABLE registrations ADD COLUMN reminder_attempts INTEGER NOT NULL DEFAULT 0"))
-        if "last_reminder_sent_at" not in existing_columns:
-            connection.execute(text("ALTER TABLE registrations ADD COLUMN last_reminder_sent_at TIMESTAMP WITH TIME ZONE"))
-        if "last_reminder_error" not in existing_columns:
-            connection.execute(text("ALTER TABLE registrations ADD COLUMN last_reminder_error TEXT"))
+    app_dir = os.path.dirname(os.path.abspath(__file__))
+    config = Config(os.path.join(app_dir, "alembic.ini"))
+    config.set_main_option("script_location", os.path.join(app_dir, "migrations"))
+    config.set_main_option("sqlalchemy.url", DATABASE_URL)
+    command.upgrade(config, "head")
 
 
 async def reminder_loop() -> None:
@@ -89,12 +74,12 @@ async def reminder_loop() -> None:
 
 @app.on_event("startup")
 def startup_event() -> None:
-    init_db()
-    ensure_event_columns()
-    ensure_registration_columns()
+    wait_for_database()
+    run_migrations()
 
     with SessionLocal() as db:
         seed_initial_events(db)
+        seed_community_content(db)
 
     if os.getenv("ENABLE_REMINDER_SCHEDULER", "true").lower() != "false":
         try:

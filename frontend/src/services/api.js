@@ -38,7 +38,7 @@ async function fetchJson(path, options = {}) {
     }
     return payload;
   } catch (error) {
-    console.warn("API request failed, falling back to local data:", error);
+    console.warn("API request failed:", error);
     return null;
   }
 }
@@ -63,5 +63,39 @@ export async function registerForEvent(eventId, registrationData) {
   return fetchJson(`/api/events/${eventId}/registrations`, {
     method: "POST",
     body: JSON.stringify(registrationData),
+  });
+}
+
+export async function fetchCommunityGroups() {
+  const data = await fetchJson(`/api/community/groups`);
+  return Array.isArray(data) ? data : [];
+}
+
+export async function fetchActivityFeed() {
+  const data = await fetchJson(`/api/community/activity`);
+  return Array.isArray(data) ? data : [];
+}
+
+export async function fetchGalleryImages() {
+  const data = await fetchJson(`/api/community/gallery`);
+  return Array.isArray(data) ? data : [];
+}
+
+export async function fetchTestimonials(context) {
+  const query = context ? `?context=${encodeURIComponent(context)}` : "";
+  const data = await fetchJson(`/api/testimonials${query}`);
+  return Array.isArray(data) ? data : [];
+}
+
+export async function fetchStats(section) {
+  const query = section ? `?section=${encodeURIComponent(section)}` : "";
+  const data = await fetchJson(`/api/stats${query}`);
+  return Array.isArray(data) ? data : [];
+}
+
+export async function subscribeNewsletter(email) {
+  return fetchJson(`/api/newsletter/subscribe`, {
+    method: "POST",
+    body: JSON.stringify({ email }),
   });
 }

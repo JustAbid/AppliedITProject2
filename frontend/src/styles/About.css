@@ -1,29 +1,138 @@
-.about-page { min-height: 100vh; background: linear-gradient(180deg, #f7fbf8, #eef7f3); }
+.about-story {
+  background: var(--color-surface);
+}
 
-.about-hero { padding: 3.5rem 1.5rem; text-align: center; }
-.about-hero-inner { max-width: 900px; margin: 0 auto; }
-.about-hero h1 { font-size: 2.25rem; margin-bottom: 0.5rem; }
-.about-hero .lead { color: #245c3f; max-width: 720px; margin: 0 auto; }
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
 
-.about-content { padding: 2rem 1.25rem; }
-.container { max-width: 1000px; margin: 0 auto; }
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem; }
-.values { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin: 1rem 0 1.5rem; }
+.about-story-grid .section-header {
+  margin-bottom: 0;
+  text-align: left;
+  margin-left: 0;
+}
 
-.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1rem 0 1.5rem; }
-.stat { background: white; border-radius: 12px; padding: 1rem; text-align: center; box-shadow: 0 8px 20px rgba(15,81,50,0.06); }
-.stat-value { font-size: 1.5rem; font-weight: 800; color: #1f7a4a; }
-.stat-label { color: #2d7a4e; }
+.about-story-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
 
-.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1rem 0 1.5rem; }
-.team-member { background: white; padding: 1rem; border-radius: 12px; text-align: center; box-shadow: 0 8px 20px rgba(15,81,50,0.06); }
-.team-member img { width: 64px; height: 64px; border-radius: 50%; margin-bottom: 0.5rem; }
+.about-story-list li {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
 
-.cta { background: linear-gradient(90deg, #2d7a4e, #1f5f3a); color: white; padding: 1.5rem; border-radius: 12px; text-align: center; margin-top: 1.5rem; }
-.cta-btn { display: inline-block; margin-top: 0.75rem; padding: 0.6rem 1rem; background: white; color: #1f7a4a; border-radius: 999px; font-weight: 700; text-decoration: none; }
+.about-story-list svg {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  margin-top: 3px;
+}
 
-@media (max-width: 900px) {
-  .grid-2, .values { grid-template-columns: 1fr; }
-  .stats { grid-template-columns: repeat(2, 1fr); }
-  .team-grid { grid-template-columns: repeat(2, 1fr); }
+.about-mission-vision {
+  background: var(--color-bg);
+}
+
+.about-mission-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+.about-mission-card {
+  text-align: center;
+}
+
+.about-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+.about-mission-card h3 {
+  margin-bottom: var(--space-2);
+}
+
+.about-values {
+  background: var(--color-surface);
+}
+
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.about-value-card svg {
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+.about-value-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: var(--space-2);
+}
+
+.about-value-card p {
+  font-size: 0.9rem;
+}
+
+.about-stats {
+  background: var(--color-bg);
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+}
+
+.about-team {
+  background: var(--color-surface);
+}
+
+.about-team-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-5);
+}
+
+@media (max-width: 960px) {
+  .about-story-grid,
+  .about-mission-vision-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .about-values-grid,
+  .about-team-grid {
+    grid-template-columns: 1fr;
+  }
 }
