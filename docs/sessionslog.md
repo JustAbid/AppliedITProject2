@@ -247,11 +247,27 @@ Today, the first part was to discuss our progress with sir and to solve if any i
 The next part was the ORM, I understood what ORM is and how we can use python and its libraries to automate the SQL commands rather than hardcoding the queries or or manually typing them in our code.
 Then we moved on to hands on lab session where we completed 1st exercise, related to ORM. (Postgress, SQLAlchemy and Alembic libraries). I implemented these libraries and mapped so that backend reaches the postgres DB
 
+## Yogesh Chelluboina
+
+Configured the PostgreSQL database along with the backend and frontend services in the docker-compose.yml file.
+Integrated the required database libraries, including SQLAlchemy, Psycopg, and Alembic, into the backend.
+Built the Docker images and successfully launched all containers.
+Developed and tested a temporary /db-ping API endpoint to confirm successful database connectivity.
+
+
 # 11/06/2026
 
 ## Mohammed Abid Ali Sameer
 
 Today I completed the 2nd exercise. Instead of accessing DB Per request (Like adding or deleting tasks), we created a single session for all requests.
+
+## Yogesh Chelluboina
+
+Migrated the application from in-memory data storage to a PostgreSQL database using SQLAlchemy ORM.
+Designed and integrated the database configuration, ORM models, repositories, service layer, and updated the controllers.
+Implemented full CRUD functionality using SQLAlchemy sessions with the repository pattern.
+Verified the implementation by testing task creation, retrieval, and deletion through the existing React frontend.
+
 
 # 16/06/2026
 
@@ -259,11 +275,34 @@ Today I completed the 2nd exercise. Instead of accessing DB Per request (Like ad
 
 Today I completed the 3rd exercise.
 
+
+## Yogesh Chelluboina
+
+Contributed to the development of the MVC Lab Task Management application.
+Connected the React frontend with the FastAPI backend to enable seamless communication.
+Implemented functionality to associate tasks with specific users.
+Integrated API requests to retrieve user and task data.
+Enhanced the frontend to display the assigned owner for each task.
+Validated backend APIs using Swagger UI and browser-based testing.
+Resolved frontend rendering issues and improved API integration.
+Investigated and fixed issues related to task creation and user ID validation.
+
+
 # 18/06/2026
 
 ## Mohammed Abid Ali Sameer
 
 Today I completed the 4th exercise. The Advanced Challenge is pending.
+
+## Yogesh Chelluboina
+
+Configured Alembic to handle database schema migrations.
+Removed the use of create_all() for automatic table creation.
+Created and applied the initial database migration successfully.
+Introduced a created_at column to the Task table through a new migration.
+Generated, executed, and validated both upgrade and downgrade migrations.
+Verified the migration history to ensure all database changes were tracked correctly.
+
 
 # 23/06/2026
 
@@ -271,11 +310,23 @@ Today I completed the 4th exercise. The Advanced Challenge is pending.
 
 We had to do Exercise 1 and 2 but I was absent. So I started doing at home.
 
+
+
 # 25/06/2026
 
 ## Mohammed Abid Ali Sameer
 
 Today I completed Exercise 1 and 2. Ex 1 was about passwords and hashing them, keeping the track of hash and its id related to the user. We also looked at migration on how we can upgrade or downgrade. Ex 2 was about the json web token. We would create a json token and deploy it during the session, capture the request using postman to have a look at the token. We also validated the json token.
+
+## Yogesh Chelluboina
+
+Implemented JWT-based authentication in the FastAPI backend.
+Developed user registration and login API endpoints.
+Integrated JWT token generation along with secure password verification.
+Enhanced the user repository to support authentication and user registration.
+Connected the authentication routes to the main application.
+Updated the frontend to securely store and use the JWT token for authenticated requests.
+
 
 ## Mogili Vineeth Reddy
 
@@ -287,6 +338,15 @@ Today, I completed Exercises 1 and 2. Exercise 1 covered password hashing, user 
 
 I attended half class and left early. So I completed exercise 3 and 4 at home.
 
+## Yogesh Chelluboina
+
+Integrated JWT authentication to secure the application's API routes.
+Implemented the get_current_user dependency to identify authenticated users.
+Restricted access to task-related endpoints so they are available only to logged-in users.
+Added the /auth/me endpoint to return information about the authenticated user.
+Validated the protected API endpoints by testing them with JWT access tokens.
+
+
 ## Mogili Vineeth Reddy
 
 I attended only the first half of the class and completed Exercises 3 and 4 at home. This helped me stay on track with the coursework and reinforce the concepts independently.
@@ -296,6 +356,17 @@ I attended only the first half of the class and completed Exercises 3 and 4 at h
 ## Mohammed Abid Ali Sameer
 
 We had a quiz about Auth. Then we had recap as well. Then we started testing our MVC Task Applicaiton, like writing test cases, or use of the pytest library. I finished Ex 1 in class, the test passed but with warning like something was deprecated I guess. I learned about fixtures,the testing methodology like bring in data, use fixtures then assert data. Next gotta work on Ex 2.
+
+## Yogesh Chelluboina
+
+Implemented JWT-based authentication and secured the application's API endpoints.
+Added user login functionality with token-based authentication and authorization.
+Linked tasks to the authenticated user's account.
+Enforced access control so users can view and manage only their own tasks.
+Updated the frontend to include authentication tokens in API requests.
+Verified the implementation by testing user login, task creation, task deletion, and authorization features.
+
+
 
 ## Mogili Vineeth Reddy
 
@@ -307,6 +378,35 @@ We started the session with an authentication quiz and a quick recap. I complete
 
 Today I completed the Ex 4 of Testing. We had to test different Authorization Scenarios like users cant view other's tasks, or modify (edit/delete/add/view) etc. 
 
+## Yogesh Chelluboina
+
+Set up a backend testing environment using Pytest.
+Configured an in-memory SQLite database to enable isolated and repeatable testing.
+Created reusable test fixtures for database sessions, test users, and the FastAPI TestClient.
+Developed mock repositories to validate application logic without relying on the actual database.
+Implemented smoke tests to verify task ownership and authorization functionality.
+Executed automated test cases to ensure the application's features worked as expected.
+
+
 ## Mogili Vineeth Reddy
 
 Today, I completed Testing Exercise 4, which focused on authorization scenarios. I verified that users can only view and manage their own tasks by writing and executing test cases for different access permissions.
+
+# 09/07/2026
+
+## Yogesh Chelluboina
+
+Developed unit tests for the TaskService using mock repositories.
+Implemented integration tests for API endpoints with the FastAPI TestClient.
+Added authorization test cases to verify user access control for tasks.
+Validated task creation, retrieval, deletion, input validation, and error-handling scenarios through comprehensive testing.
+
+
+# 14/07/2026
+
+## Yogesh Chelluboina
+Completed the professor's quiz on software testing concepts.
+Attended and observed other teams' sprint presentations and project demonstrations.
+Reviewed and learned from the different implementation approaches presented by classmates.
+Successfully uploaded and synchronized the MVCLAB project with the GitHub repository.
+
