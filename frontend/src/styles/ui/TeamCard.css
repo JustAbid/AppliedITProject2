@@ -3,8 +3,8 @@
 }
 
 .team-card-image {
-  width: 96px;
-  height: 96px;
+  width: 148px;
+  height: 148px;
   border-radius: var(--radius-full);
   object-fit: cover;
   margin: 0 auto var(--space-4);
