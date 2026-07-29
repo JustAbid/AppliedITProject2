@@ -10,6 +10,7 @@ import EmptyState from "../components/ui/EmptyState";
 import LoadingSkeleton from "../components/ui/LoadingSkeleton";
 import Button from "../components/ui/Button";
 import Reveal from "../components/ui/Reveal";
+import HostEventCTA from "../components/ui/HostEventCTA";
 import { fetchEvents } from "../services/api";
 import "../styles/Events.css";
 
@@ -180,6 +181,8 @@ function Events() {
             )}
           </div>
         </section>
+
+        <HostEventCTA />
       </main>
       <Footer />
     </>

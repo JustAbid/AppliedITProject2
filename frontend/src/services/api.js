@@ -101,3 +101,10 @@ export async function subscribeNewsletter(email) {
     body: JSON.stringify({ email }),
   });
 }
+
+export async function submitHostingRequest(data) {
+  return fetchJson(`/api/hosting-requests`, {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+}

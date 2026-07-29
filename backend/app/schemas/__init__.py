@@ -14,6 +14,7 @@ from app.schemas.community import (
     TestimonialOut,
 )
 from app.schemas.newsletter import NewsletterSubscribeIn, NewsletterSubscribeOut
+from app.schemas.hosting_request import HostingRequestCreate, HostingRequestOut
 
 __all__ = [
     "EventBase",
@@ -30,4 +31,6 @@ __all__ = [
     "ImpactStatOut",
     "NewsletterSubscribeIn",
     "NewsletterSubscribeOut",
+    "HostingRequestCreate",
+    "HostingRequestOut",
 ]

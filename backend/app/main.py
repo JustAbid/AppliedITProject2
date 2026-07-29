@@ -10,6 +10,7 @@ from sqlalchemy.exc import OperationalError
 
 from app.controllers.community import router as community_router, testimonials_router
 from app.controllers.events import router as events_router
+from app.controllers.hosting_requests import router as hosting_requests_router
 from app.controllers.newsletter import router as newsletter_router
 from app.controllers.registrations import router as registrations_router
 from app.controllers.stats import router as stats_router
@@ -35,6 +36,7 @@ app.include_router(community_router)
 app.include_router(testimonials_router)
 app.include_router(stats_router)
 app.include_router(newsletter_router)
+app.include_router(hosting_requests_router)
 
 
 def wait_for_database() -> None:

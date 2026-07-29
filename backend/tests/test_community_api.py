@@ -82,3 +82,21 @@ def test_newsletter_subscribe_is_idempotent(create_app_client):
     assert first.status_code == 201
     assert second.status_code == 201
     assert first.json()["email"] == second.json()["email"] == "volunteer@example.com"
+
+
+def test_create_hosting_request_stores_submission(create_app_client):
+    payload = {
+        "organizationName": "Berlin River Guardians",
+        "contactEmail": "ORGANISER@example.com",
+        "phone": "+49 30 1234567",
+        "message": "We'd like to host a riverbank clean-up next month.",
+    }
+
+    response = create_app_client.post("/api/hosting-requests", json=payload)
+
+    assert response.status_code == 201
+    body = response.json()
+    assert body["organization_name"] == "Berlin River Guardians"
+    assert body["contact_email"] == "organiser@example.com"
+    assert body["message"] == payload["message"]
+    assert body["id"] is not None
