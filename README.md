@@ -22,6 +22,7 @@ Core capabilities implemented so far:
 - **Event details** – view descriptions, timings, and requirements for each event
 - **RSVP / registration** – quick sign-up for an event with contact details
 - **Reminders & notifications** – automated reminder emails for upcoming registered events
+- **Interactive event location maps** – embedded Leaflet/OpenStreetMap view on each event's details page, with a "View in Maps" link out to Google Maps for directions
 - **Community page** – community groups, activity feed, testimonials, and photo gallery
 - **Impact stats** – aggregated participation/impact numbers shown on Home, About, and Community pages
 - **Newsletter subscription** – email opt-in for updates
@@ -66,11 +67,21 @@ graph TD
 
 All three containers are defined in [docker-compose.yml](docker-compose.yml) and run together with `docker compose up`.
 
+### Services
+
+Each container above has its own README under [`services/`](services/) with its full API/routes, environment variables, and tech stack:
+
+| Service | Description |
+|---|---|
+| [services/frontend](services/frontend/README.md) | React/Vite web client |
+| [services/backend](services/backend/README.md) | FastAPI REST API |
+| [services/database](services/database/README.md) | PostgreSQL data store |
+
 ## Tech Stack
 
 | Layer | Technology |
 |---|---|
-| Frontend | React 19, Vite, React Router, Lucide icons |
+| Frontend | React 19, Vite, React Router, Lucide icons, Leaflet / react-leaflet |
 | Backend | Python, FastAPI, SQLAlchemy, Alembic (migrations), Uvicorn |
 | Database | PostgreSQL 16 |
 | Deployment | Docker & Docker Compose |
@@ -156,7 +167,6 @@ All backend routes are prefixed with `/api` and defined under [backend/app/contr
 │   │   ├── services/          # Business logic (registrations, notifications, seeding)
 │   │   ├── migrations/        # Alembic migrations
 │   │   ├── database.py
-│   │   ├── init_db.py
 │   │   └── main.py            # FastAPI app entrypoint
 │   ├── tests/                 # Pytest test suite
 │   └── requirements.txt
@@ -168,8 +178,12 @@ All backend routes are prefixed with `/api` and defined under [backend/app/contr
 │   │   ├── hooks/               # Custom hooks
 │   │   ├── services/            # API client
 │   │   ├── styles/               # Per-component CSS
-│   │   └── utils/                # Helpers (calendar, time formatting)
+│   │   └── utils/                # Helpers (calendar, time formatting, maps)
 │   └── package.json
+├── services/                  # Per-service docs (API, env vars, tech stack)
+│   ├── frontend/README.md
+│   ├── backend/README.md
+│   └── database/README.md
 └── docs/
     ├── vision.md               # Product vision, personas, feature list
     ├── Personas.md

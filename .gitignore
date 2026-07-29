@@ -13,6 +13,10 @@ build/
 .venv/
 venv/
 *.pyc
+.pytest_cache/
+*.db
+*.sqlite
+*.sqlite3
 
 # Node / JavaScript
 node_modules/

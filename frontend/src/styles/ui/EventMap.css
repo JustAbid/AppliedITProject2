@@ -1,0 +1,33 @@
+.event-map {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.event-map-canvas {
+  width: 100%;
+  height: 260px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  z-index: 0;
+}
+
+.event-map-view-btn {
+  align-self: flex-start;
+}
+
+.event-map-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+}
+
+.event-map-empty p {
+  margin: 0;
+}

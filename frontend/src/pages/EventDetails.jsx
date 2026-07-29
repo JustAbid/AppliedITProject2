@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Button from "../components/ui/Button";
 import LoadingSkeleton from "../components/ui/LoadingSkeleton";
+import EventMap from "../components/ui/EventMap";
 import { fetchEventById } from "../services/api";
 import "../styles/EventDetails.css";
 
@@ -79,6 +80,15 @@ function EventDetails() {
                     </span>
                     <p>{event.organizer}</p>
                   </div>
+                </div>
+
+                <div className="event-details-section">
+                  <h3>Location</h3>
+                  <EventMap
+                    latitude={event.latitude}
+                    longitude={event.longitude}
+                    locationLabel={event.location}
+                  />
                 </div>
 
                 {event.required_items?.length > 0 && (

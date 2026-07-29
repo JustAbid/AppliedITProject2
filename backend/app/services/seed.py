@@ -8,6 +8,8 @@ INITIAL_EVENTS = [
         "date": "Aug 24, 2026",
         "time": "10:00 AM",
         "location": "Prinzessinnengarten, Kreuzberg",
+        "latitude": 52.4988,
+        "longitude": 13.4142,
         "description": "Join a hands-on session on sustainable gardening and composting with local eco experts.",
         "longDescription": "This workshop brings neighbors together to learn how to grow food, reuse organic waste, and build greener shared spaces. The session includes soil testing, composting demos, and a guided tour of the community garden beds.",
         "highlights": [
@@ -27,6 +29,8 @@ INITIAL_EVENTS = [
         "date": "Sep 02, 2026",
         "time": "8:30 AM",
         "location": "Landwehrkanal, Kreuzberg",
+        "latitude": 52.4939,
+        "longitude": 13.4245,
         "description": "Spend the morning helping clean the canal banks and learn how to reduce plastic waste.",
         "longDescription": "The clean-up drive is a relaxed morning of teamwork where participants collect litter along the Landwehrkanal, sort recyclables, and learn simple habits that protect local waterways. Gloves and bags are provided on-site.",
         "highlights": [
@@ -46,6 +50,8 @@ INITIAL_EVENTS = [
         "date": "Sep 14, 2026",
         "time": "1:00 PM",
         "location": "Rotes Rathaus Atrium, Mitte",
+        "latitude": 52.5186,
+        "longitude": 13.4083,
         "description": "A lively event featuring student-led projects, climate talks, and collaborative activities.",
         "longDescription": "Designed for young changemakers, this summit showcases inspiring projects from local students and gives everyone a chance to connect through interactive workshops and short talks on climate action.",
         "highlights": [
@@ -65,6 +71,8 @@ INITIAL_EVENTS = [
         "date": "Oct 05, 2026",
         "time": "4:00 PM",
         "location": "Innovation Hub, Adlershof",
+        "latitude": 52.4288,
+        "longitude": 13.5297,
         "description": "Discover practical solar solutions for homes and neighborhoods through live demos.",
         "longDescription": "The demonstration day offers a practical look at solar technology with live examples, energy-saving tips, and a chance to speak with experts about future installations for homes and community spaces.",
         "highlights": [
@@ -84,6 +92,8 @@ INITIAL_EVENTS = [
         "date": "Oct 18, 2026",
         "time": "9:00 AM",
         "location": "Tempelhofer Feld, Tempelhof",
+        "latitude": 52.4732,
+        "longitude": 13.4033,
         "description": "Help plant new trees across Tempelhofer Feld and learn about urban ecology.",
         "longDescription": "Join volunteers to plant native trees, build mulch beds, and hear from experts about urban forestry benefits and long-term tree care across Berlin's neighborhoods.",
         "highlights": [
@@ -103,6 +113,8 @@ INITIAL_EVENTS = [
         "date": "Oct 27, 2026",
         "time": "6:00 PM",
         "location": "Mauerpark Community Centre, Prenzlauer Berg",
+        "latitude": 52.5441,
+        "longitude": 13.4022,
         "description": "Learn how to reduce waste, reuse materials, and live more sustainably at home.",
         "longDescription": "This hands-on workshop covers recycling best practices, DIY reuse projects, and resource-saving techniques for families and apartment dwellers across Berlin.",
         "highlights": [
@@ -329,6 +341,8 @@ def seed_initial_events(db: Session) -> None:
                     date=event_data["date"],
                     time=event_data["time"],
                     location=event_data["location"],
+                    latitude=event_data.get("latitude"),
+                    longitude=event_data.get("longitude"),
                     description=event_data["description"],
                     long_description=event_data["longDescription"],
                     highlights=event_data["highlights"],
@@ -340,6 +354,11 @@ def seed_initial_events(db: Session) -> None:
                     image=event_data["image"],
                 )
             )
+        elif existing.latitude is None and existing.longitude is None:
+            # Backfills coordinates onto events that were seeded before the
+            # latitude/longitude columns existed (e.g. a persisted dev/docker volume).
+            existing.latitude = event_data.get("latitude")
+            existing.longitude = event_data.get("longitude")
     db.commit()
 
 

@@ -5,6 +5,8 @@ const events = [
     date: "Aug 24, 2026",
     time: "10:00 AM",
     location: "Riverfront Park",
+    latitude: 52.4988,
+    longitude: 13.4142,
     description:
       "Join a hands-on session on sustainable gardening and composting with local eco experts.",
     longDescription:
@@ -25,6 +27,8 @@ const events = [
     date: "Sep 02, 2026",
     time: "8:30 AM",
     location: "Harbor Beach",
+    latitude: 52.4939,
+    longitude: 13.4245,
     description:
       "Spend the morning helping clean the shoreline and learn how to reduce plastic waste.",
     longDescription:
@@ -45,6 +49,8 @@ const events = [
     date: "Sep 14, 2026",
     time: "1:00 PM",
     location: "City Hall Atrium",
+    latitude: 52.5186,
+    longitude: 13.4083,
     description:
       "A lively event featuring student-led projects, climate talks, and collaborative activities.",
     longDescription:
@@ -65,6 +71,8 @@ const events = [
     date: "Oct 05, 2026",
     time: "4:00 PM",
     location: "Innovation Hub",
+    latitude: 52.4288,
+    longitude: 13.5297,
     description:
       "Discover practical solar solutions for homes and neighborhoods through live demos.",
     longDescription:

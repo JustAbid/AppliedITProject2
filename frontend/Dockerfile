@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 5173
 
-CMD ["sh", "-c", "npm install && npm run dev -- --host 0.0.0.0"]
+CMD ["sh", "-c", "npm install && exec node_modules/.bin/vite --host 0.0.0.0"]

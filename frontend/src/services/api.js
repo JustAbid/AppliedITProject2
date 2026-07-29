@@ -10,6 +10,8 @@ function normalizeEvent(e) {
     date: e.date ?? "",
     time: e.time ?? "",
     location: e.location ?? "",
+    latitude: e.latitude ?? null,
+    longitude: e.longitude ?? null,
     description: e.description ?? e.shortDescription ?? "",
     long_description: e.long_description ?? e.longDescription ?? e.longDescription ?? "",
     highlights: e.highlights ?? e.highlight ?? [],

@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -8,6 +8,8 @@ class EventBase(BaseModel):
     date: str
     time: str
     location: str
+    latitude: Optional[float] = None
+    longitude: Optional[float] = None
     description: str
     long_description: str = Field(alias="longDescription")
     highlights: List[str]

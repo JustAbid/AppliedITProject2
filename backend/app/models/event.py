@@ -1,4 +1,4 @@
-from sqlalchemy import JSON, Column, Integer, String, Text
+from sqlalchemy import JSON, Column, Float, Integer, String, Text
 from sqlalchemy.orm import relationship
 
 from app.database import Base
@@ -12,6 +12,8 @@ class Event(Base):
     date = Column(String(50), nullable=False)
     time = Column(String(50), nullable=False)
     location = Column(String(255), nullable=False)
+    latitude = Column(Float, nullable=True)
+    longitude = Column(Float, nullable=True)
     description = Column(Text, nullable=False)
     long_description = Column(Text, nullable=False)
     highlights = Column(JSON, nullable=False, default=list)
