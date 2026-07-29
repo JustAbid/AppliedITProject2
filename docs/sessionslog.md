@@ -327,7 +327,6 @@ Enhanced the user repository to support authentication and user registration.
 Connected the authentication routes to the main application.
 Updated the frontend to securely store and use the JWT token for authenticated requests.
 
-
 ## Mogili Vineeth Reddy
 
 Today, I completed Exercises 1 and 2. Exercise 1 covered password hashing, user authentication, and database migrations. Exercise 2 focused on JSON Web Tokens (JWT), where I created, validated, and inspected tokens using Postman.
@@ -346,10 +345,9 @@ Restricted access to task-related endpoints so they are available only to logged
 Added the /auth/me endpoint to return information about the authenticated user.
 Validated the protected API endpoints by testing them with JWT access tokens.
 
-
 ## Mogili Vineeth Reddy
 
-I attended only the first half of the class and completed Exercises 3 and 4 at home. This helped me stay on track with the coursework and reinforce the concepts independently.
+I a completed Exercises 3 and 4 . This helped me stay on track with the coursework and reinforce the concepts independently.
 
 # 02/07/2026
 
@@ -366,11 +364,10 @@ Enforced access control so users can view and manage only their own tasks.
 Updated the frontend to include authentication tokens in API requests.
 Verified the implementation by testing user login, task creation, task deletion, and authorization features.
 
-
-
 ## Mogili Vineeth Reddy
 
 We started the session with an authentication quiz and a quick recap. I completed Testing Exercise 1 using pytest, learned about fixtures and assertions, and successfully ran the test cases despite a deprecation warning.
+
 
 # 07/07/2026
 
@@ -387,10 +384,10 @@ Developed mock repositories to validate application logic without relying on the
 Implemented smoke tests to verify task ownership and authorization functionality.
 Executed automated test cases to ensure the application's features worked as expected.
 
-
 ## Mogili Vineeth Reddy
 
 Today, I completed Testing Exercise 4, which focused on authorization scenarios. I verified that users can only view and manage their own tasks by writing and executing test cases for different access permissions.
+
 
 # 09/07/2026
 
@@ -401,6 +398,9 @@ Implemented integration tests for API endpoints with the FastAPI TestClient.
 Added authorization test cases to verify user access control for tasks.
 Validated task creation, retrieval, deletion, input validation, and error-handling scenarios through comprehensive testing.
 
+## Mogili Vineeth Reddy
+Developed unit tests for the TaskService using mock repositories and implemented integration tests for API endpoints with the FastAPI TestClient. Added authorization test cases to verify user access permissions and validated task creation, retrieval, deletion, input validation, and error-handling scenarios to ensure application reliability.
+
 
 # 14/07/2026
 
@@ -409,4 +409,8 @@ Completed the professor's quiz on software testing concepts.
 Attended and observed other teams' sprint presentations and project demonstrations.
 Reviewed and learned from the different implementation approaches presented by classmates.
 Successfully uploaded and synchronized the MVCLAB project with the GitHub repository.
+
+## Mogili Vineeth Reddy
+
+Completed the software testing concepts quiz, attended sprint presentations and project demonstrations by other teams, explored different implementation approaches, and successfully uploaded and synchronized the MVCLAB project with the GitHub repository.
 
