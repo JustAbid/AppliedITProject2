@@ -159,7 +159,8 @@ function EventRegistration() {
             <h1>You&apos;re registered!</h1>
             <p>
               Your place has been reserved for <strong>{event?.title}</strong>. A confirmation email with event
-              details will be sent to {result.registration.email} shortly.
+              details will be sent to {result.registration.email} shortly. You can also download an ICS file below
+              and import it into Google Calendar, Outlook, or Apple Calendar.
             </p>
 
             <div className="registration-success-actions">
